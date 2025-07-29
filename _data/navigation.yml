@@ -3,9 +3,9 @@ navigation:
   - title: "Home"
     url: /
   - title: "Projects"
-    url: /projects
+    url: /projects/
   - title: "Blog"
-    url: /blog
+    url: /blog/
   - title: "Contact"
-    url: /contact
+    url: /contact/
 
