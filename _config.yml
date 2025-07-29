@@ -1,24 +1,31 @@
 title: "Will Schneider — Data Science Portfolio"
 description: "Portfolio of projects in predictive modeling, analytics, and machine learning"
-remote_theme: "mmistakes/minimal-mistakes"
-logo: 
-show_downloads: false
-google_analytics: 
 
+remote_theme: "mmistakes/minimal-mistakes"   # pulls the theme
 
-# Include assets (custom css)
-defaults:
-  - scope:
-      path: "assets"
-    values:
-      sitemap: false
-sass:
-  style: compressed
+url: "https://schwill2018.github.io"         # for canonical links
+baseurl: ""                                  # user/org site → leave empty
 
-# Custom CSS
-plugins:
+plugins:                                     # all allowed by GitHub Pages
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
 
-# Optional: highlight Brookwater Labs blue
-# See assets/custom.css for easy color swap
+# make everything in _pages render at /<filename>/
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# default layout for pages/posts
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
