@@ -1,6 +1,7 @@
 ---
 layout: home          # Minimal‑Mistakes built‑in “blog roll” layout
-title: Home
+title: "Home"
+permalink: /
 author_profile: true  # shows avatar & bio if you add one later
 ---
 
