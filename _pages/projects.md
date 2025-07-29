@@ -18,6 +18,7 @@ NHL game prediction platform featuring:
 - Evaluation with ROC/AUC and business KPIs  
 **Highlights:** Practical skills in data engineering and hockey analytics.  
 [View project](https://github.com/schwill2018/hockeypreds)
+[Read Blog Post](/nhl_predictions_blog.html)
 
 ---
 
