@@ -1,6 +1,6 @@
 ---
-layout: post
 title: "Hip Hypermobility Analysis: What Actually Matters?"
+layout: post
 date: 2024-12-01
 categories: research
 ---
