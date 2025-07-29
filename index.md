@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: default
+author_profile: true  # shows avatar & bio (add one later)
 ---
 
 # Will Schneider
