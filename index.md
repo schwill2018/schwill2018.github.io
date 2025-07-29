@@ -17,3 +17,4 @@ Welcome to my data science portfolio. Here I showcase hands-on projects across s
 
 As a statistician and data scientist, I use rigorous analysis and code-first approaches to solve real business and research problems. This site collects highlights from my work—see the Projects tab for more details or read my latest blog post.
 
+
