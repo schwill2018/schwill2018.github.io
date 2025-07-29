@@ -53,5 +53,5 @@ Contrary to expectations, pain-related psychosocial scores were not associated w
 ## Project Credits
 
 - **Research & Analysis:** Will Schneider, Ellen Taylor
-- **Dashboard Development:** Will Schneider
+- **Dashboard Development:** Will Schneider, Ellen Taylor
 
