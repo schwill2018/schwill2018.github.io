@@ -17,8 +17,8 @@ NHL game prediction platform featuring:
 - Machine learning for player prop bets, game outcomes, and spreads
 - Evaluation with ROC/AUC and business KPIs  
 **Highlights:** Practical skills in data engineering and hockey analytics.  
-[View project](https://github.com/schwill2018/hockeypreds)
-[Read Blog Post](/nhl_predictions_blog.html)
+- [View project](https://github.com/schwill2018/hockeypreds)
+- [Read Blog Post](/nhl_predictions_blog.html)
 
 ---
 
@@ -27,7 +27,7 @@ A model-driven study of taxi booking cancellations using regression, decision tr
 - Feature engineering on large real-world dataset
 - Comparison of multiple algorithms and performance metrics  
 **Highlights:** Demonstrates predictive modeling in operations/logistics.  
-[View project](https://github.com/schwill2018/Taxi-Cancellations---A-Predictive-Model-Analysis)
+- [View project](https://github.com/schwill2018/Taxi-Cancellations---A-Predictive-Model-Analysis)
 
 ---
 
@@ -36,7 +36,7 @@ Built a multi-layer perceptron (MLP) from scratch in Python using class-based ar
 - Stepwise implementation of deep learning concepts
 - Focus on interpretability and custom model logic  
 **Highlights:** Hands-on neural net implementation without high-level frameworks.  
-[View project](https://github.com/schwill2018/Wide-and-Deep-Learning-with-Tensorflow-Keras)
+- [View project](https://github.com/schwill2018/Wide-and-Deep-Learning-with-Tensorflow-Keras)
 
 ---
 
@@ -45,7 +45,7 @@ Dual Supervision Recommendation Engine:
 - Developed an end-to-end recommender for ideal living locations  
 - Integrated feature engineering, NLP, and geospatial analytics  
 **Highlights:** First major portfolio piece; [see LinkedIn article](https://www.linkedin.com/pulse/dual-supervision-recommendation-engine-find-ideal-living-schneider/).  
-[View project](https://github.com/schwill2018/applied_datascience_capstone)
+- [View project](https://github.com/schwill2018/applied_datascience_capstone)
 
 ---
 
