@@ -1,19 +1,10 @@
 title: "Will Schneider — Data Science Portfolio"
 description: "Portfolio of projects in predictive modeling, analytics, and machine learning"
-theme: jekyll-theme-primer
+remote_theme: "mmistakes/minimal-mistakes"
 logo: 
 show_downloads: false
 google_analytics: 
-# Navigation links
-navigation:
-  - title: "Home"
-    url: /
-  - title: "Projects"
-    url: /projects
-  - title: "Blog"
-    url: /blog
-  - title: "Contact"
-    url: /contact
+
 
 # Include assets (custom css)
 defaults:
