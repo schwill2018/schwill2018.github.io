@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Will Schneider &amp; Ellen Taylor">
+<meta name="dcterms.date" content="2024-12-18">
+
+<title>Exploring the Relationship Between Hip Hypermobility and Psychosocial Outcomes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="hypermobility_blog_files/libs/clipboard/clipboard.min.js"></script>
+<script src="hypermobility_blog_files/libs/quarto-html/quarto.js"></script>
+<script src="hypermobility_blog_files/libs/quarto-html/popper.min.js"></script>
+<script src="hypermobility_blog_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="hypermobility_blog_files/libs/quarto-html/anchor.min.js"></script>
+<link href="hypermobility_blog_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="hypermobility_blog_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="hypermobility_blog_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="hypermobility_blog_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="hypermobility_blog_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="hypermobility_blog_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="hypermobility_blog_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exploring the Relationship Between Hip Hypermobility and Psychosocial Outcomes</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Statistical Modeling</div>
+    <div class="quarto-category">Shiny Apps</div>
+    <div class="quarto-category">Clinical Data</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Will Schneider &amp; Ellen Taylor </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 18, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
+<p>Joint hypermobility, measured using the Beighton Score, has long been linked to greater incidence of injury and, indirectly, to psychosocial outcomes. However, the direct association between hypermobility and psychosocial symptoms (such as pain catastrophizing, pain interference, and pain self‑efficacy) remains underexplored.</p>
+<p>In this analysis, we examined 445 hip clinic patients, using multiple linear and logistic regression models to assess relationships between hypermobility and psychosocial outcomes. Contrary to expectations, psychosocial variables had minimal influence on hypermobility. Age and gender were the primary predictors, with younger females exhibiting higher scores.</p>
+<p><em>Full results, reproducible code, and an interactive Shiny application are available <a href="https://schneiderstats.shinyapps.io/hypermobility_app/">here</a>.</em></p>
+<section id="what-to-expect" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-expect">What to Expect</h3>
+<p>This post proceeds in five steps: Data (who and what we measured), Methods (regression and imputation workflow), Results (key tables and plots), Discussion (clinical and methodological take‑aways), and Reproducibility (Shiny app + session info). Feel free to skip to any section of interest.</p>
+<hr>
+</section>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Joint hypermobility (JHM) is characterized by an increased range of motion in joints and measured in this context by the Beighton Score (0‑9 scale). Clinical guidelines often dichotomize this score (≥4 = hypermobile), but this practice is debated, as it may reduce statistical power and obscure data nuance.</p>
+<p>Three psychosocial domains are explored:</p>
+<ul>
+<li><strong>Pain Catastrophizing</strong> (PCS): Tendency to magnify or ruminate on pain.</li>
+<li><strong>Pain Interference</strong> (PROMIS‑PI): Degree to which pain disrupts daily activities.</li>
+<li><strong>Pain Self‑Efficacy</strong> (PSEQ): Belief in ability to manage pain.</li>
+</ul>
+<p>Our study sought to answer:</p>
+<p><strong>How does hypermobility relate to psychosocial outcomes?</strong></p>
+<p>We hypothesized that patients with greater hypermobility would exhibit higher pain catastrophizing/interference and lower self‑efficacy.</p>
+<hr>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="participants" class="level3">
+<h3 class="anchored" data-anchor-id="participants">Participants</h3>
+<ul>
+<li><strong>N = 445</strong> patients from a Baylor Scott &amp; White hip clinic.</li>
+<li>Beighton Score, age, gender, and three psychosocial surveys (PCS, PROMIS‑PI, PSEQ) collected.</li>
+</ul>
+</section>
+<section id="data-exploration-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-exploration-and-visualization">Data Exploration and Visualization</h3>
+<ul>
+<li>Outcome variable (Beighton Score) and psychosocial predictors were all treated as continuous.</li>
+<li>Missing data: Substantial missingness in PCS, PROMIS‑PI, PSEQ (see Table 3).</li>
+<li>No missingness in Beighton, age, or gender.</li>
+</ul>
+<section id="summary-table-demographics" class="level4">
+<h4 class="anchored" data-anchor-id="summary-table-demographics">Summary Table: Demographics</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Patient Characteristics (N=445)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">mean(sd)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; width: 5cm;">Female n(%)</td>
+<td style="text-align: left; width: 5cm;">343(0.77)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 5cm;">Age</td>
+<td style="text-align: left; width: 5cm;">40.9(16.47)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 5cm;">Beighton Score</td>
+<td style="text-align: left; width: 5cm;">3.8(3.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 5cm;">Pain Catastrophizing Score</td>
+<td style="text-align: left; width: 5cm;">20.3(13.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 5cm;">Pain Interference Score</td>
+<td style="text-align: left; width: 5cm;">63.0(70.2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 5cm;">Pain Self-efficacy Score</td>
+<td style="text-align: left; width: 5cm;">6.0(3.5)</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0; border: 0;"><sup>a</sup> All variables are mean (SD) unless otherwise noted.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+<p><img src="data_matrix.png" class="img-fluid" alt="Correlation matrix of psychosocial predictors." width="676"><br>
+<strong>Why multicollinearity isn’t a problem.</strong><br>
+<em>The strongest correlation is <strong>PROMIS‑PI ↔︎ PSEQ = ‑0.59</strong>—moderate but below the |0.7| threshold where VIFs typically inflate. All VIFs are &lt; 2, so each psychosocial predictor provides unique information, ruling out collinearity as the reason they appear non‑significant.</em></p>
+<p><img src="multicollin.png" class="img-fluid" alt="Confidence intervals for imputed regression coefficients."></p>
+<p><em>All psychosocial CIs straddle zero, visually confirming their <strong>null effect</strong>. By contrast, Age and Gender CIs are fully negative—exactly matching the coefficient plots.</em></p>
+<hr>
+</section>
+</section>
+<section id="handling-missing-data" class="level3">
+<h3 class="anchored" data-anchor-id="handling-missing-data">Handling Missing Data</h3>
+<p><strong>Key challenge:</strong> Substantial missingness (47–64 %) in psychosocial variables.</p>
+<ul>
+<li>Solution: Multiple Imputation by Chained Equations (MICE).</li>
+<li>Imputation count based on highest fraction of missing information (FMI).</li>
+</ul>
+<section id="table-missing-data" class="level4">
+<h4 class="anchored" data-anchor-id="table-missing-data">Table: Missing Data</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>n missing</th>
+<th>Proportion missing</th>
+<th>FMI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pain Catastrophizing Score</td>
+<td>250</td>
+<td>0.56</td>
+<td>0.68</td>
+</tr>
+<tr class="even">
+<td>Pain Interference Score</td>
+<td>286</td>
+<td>0.64</td>
+<td>0.86</td>
+</tr>
+<tr class="odd">
+<td>Pain Self‑Efficacy Score</td>
+<td>210</td>
+<td>0.47</td>
+<td>0.68</td>
+</tr>
+</tbody>
+</table>
+<p><img src="missing%20data.PNG" class="img-fluid" alt="Missing‑Data Aggregation Plot showing counts and patterns of missing scores."></p>
+<p><strong>Reading the plot.</strong><br>
+<em>The bar chart confirms <strong>PROMIS‑PI</strong> has the most missing values (~64 %), followed by <strong>PCS</strong> (~56 %) and <strong>PSEQ</strong> (~47 %). In the heat‑map, each row is a patient; <strong>red = missing</strong>, <strong>blue = observed</strong>. Red blocks appear in no obvious vertical stripe, so missingness is not monotone and is plausibly <strong>Missing at Random (MAR)</strong>—a prerequisite for using MICE. Only the right‑hand side “combo” bars show a tiny subset with complete psychosocial data, justifying why imputation is essential.</em></p>
+<p><img src="imputation_1.png" class="img-fluid" alt="Bar plot comparing regression coefficients before and after imputation."></p>
+<p><strong>Take‑aways.</strong><br>
+<em>- Coefficients for <strong>Age</strong> and <strong>Gender</strong> barely move, indicating imputation doesn’t distort our key predictors.<br>
+- Psychosocial coefficients remain near zero in both models, reinforcing their negligible influence.<br>
+- Slightly larger negative coefficient for Gender after MICE (‑3.7 → ‑4.0) reflects down‑weighting of male cases in incomplete records, but 95 % CIs still exclude 0.</em></p>
+<p><img src="imputation_stderror.png" class="img-fluid" alt="Standard‑error comparison showing gains in precision after MICE."></p>
+<p><strong>Why this matters.</strong><br>
+<em>MICE cuts standard errors by <strong>20–35 %</strong> for every coefficient (most striking for Gender). Smaller SEs translate to tighter confidence intervals and more stable inferences without changing coefficient signs. In short, we gained precision without sacrificing validity.</em></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="statistical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h2>
+<ul>
+<li>Multiple Linear Regression (MLR) on complete cases and imputed data.</li>
+<li>Post‑hoc Logistic Regression: Beighton dichotomized (≥4 vs &lt;4).</li>
+<li>All models included age and gender as covariates.</li>
+<li>Multicollinearity checked (VIF &lt; 2 for all predictors).</li>
+<li>Diagnostic plots confirmed assumptions.</li>
+</ul>
+<hr>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Regression Results</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Term</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Complete Cases MLR</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Multiple Imputation MLR</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Multiple Imputation Logistic Regression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; width: 3.5cm;">(Intercept)</td>
+<td style="text-align: left; width: 3.5cm;">6.791</td>
+<td style="text-align: left; width: 3.5cm;">5.693</td>
+<td style="text-align: left; width: 3.5cm;">2.313</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 3.5cm;"></td>
+<td style="text-align: left; width: 3.5cm;">(0.043)</td>
+<td style="text-align: left; width: 3.5cm;">(0.009)</td>
+<td style="text-align: left; width: 3.5cm;">(0.205)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 3.5cm;">Age</td>
+<td style="text-align: left; width: 3.5cm;">-0.060</td>
+<td style="text-align: left; width: 3.5cm;">-0.059</td>
+<td style="text-align: left; width: 3.5cm;">-0.054</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 3.5cm;"></td>
+<td style="text-align: left; width: 3.5cm;">(&lt;0.001)</td>
+<td style="text-align: left; width: 3.5cm;">(&lt;0.001)</td>
+<td style="text-align: left; width: 3.5cm;">(&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 3.5cm;">GenderMale</td>
+<td style="text-align: left; width: 3.5cm;">-2.495</td>
+<td style="text-align: left; width: 3.5cm;">-3.703</td>
+<td style="text-align: left; width: 3.5cm;">-2.987</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 3.5cm;"></td>
+<td style="text-align: left; width: 3.5cm;">(&lt;0.001)</td>
+<td style="text-align: left; width: 3.5cm;">(&lt;0.001)</td>
+<td style="text-align: left; width: 3.5cm;">(&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 3.5cm;">Pain Catastrophizing Score</td>
+<td style="text-align: left; width: 3.5cm;">0.001</td>
+<td style="text-align: left; width: 3.5cm;">-0.003</td>
+<td style="text-align: left; width: 3.5cm;">-0.005</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 3.5cm;"></td>
+<td style="text-align: left; width: 3.5cm;">(0.980)</td>
+<td style="text-align: left; width: 3.5cm;">(0.833)</td>
+<td style="text-align: left; width: 3.5cm;">(0.707)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 3.5cm;">Pain Interference Score</td>
+<td style="text-align: left; width: 3.5cm;">-0.011</td>
+<td style="text-align: left; width: 3.5cm;">0.021</td>
+<td style="text-align: left; width: 3.5cm;">0.014</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 3.5cm;"></td>
+<td style="text-align: left; width: 3.5cm;">(0.829)</td>
+<td style="text-align: left; width: 3.5cm;">(0.496)</td>
+<td style="text-align: left; width: 3.5cm;">(0.610)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 3.5cm;">Pain Self-efficacy Score</td>
+<td style="text-align: left; width: 3.5cm;">-0.018</td>
+<td style="text-align: left; width: 3.5cm;">0.018</td>
+<td style="text-align: left; width: 3.5cm;">0.006</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 3.5cm;"></td>
+<td style="text-align: left; width: 3.5cm;">(0.839)</td>
+<td style="text-align: left; width: 3.5cm;">(0.769)</td>
+<td style="text-align: left; width: 3.5cm;">(0.912)</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0; border: 0;"><sup>a</sup> The first row for each variable is the estimate, and the value below in parentheses is the p-value for the corresponding estimate.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+<section id="key-findings" class="level3">
+<h3 class="anchored" data-anchor-id="key-findings">Key Findings</h3>
+<ul>
+<li><strong>Age</strong> and <strong>gender</strong> were the only significant predictors of hypermobility.
+<ul>
+<li>Each additional year = ≈ ‑0.06 Beighton points.</li>
+<li>Males scored ≈ 3.7 points lower than females.</li>
+</ul></li>
+<li><strong>No significant effect</strong> for any psychosocial variable (PCS, PROMIS‑PI, PSEQ) in any model.</li>
+<li>Imputed models yielded narrower standard errors vs complete‑case models.</li>
+<li><strong>Practical magnitude</strong>: a ‑0.06 slope means a 10‑year age difference translates to ≈0.6 fewer Beighton points, so an otherwise identical 20‑ vs 30‑year‑old would differ by more than half a point.</li>
+</ul>
+<p><img src="confidence%20intervals.png" class="img-fluid" width="642"></p>
+<p><em>All 95 % confidence intervals for PCS, PROMIS‑PI and PSEQ straddle 0, underscoring the statistical non‑significance of these psychosocial predictors.</em></p>
+<p><em>Visual diagnostics (coefficients, SEs, and CIs) all tell the same story: Age ↓ and Female ↑ are the only stable predictors of hypermobility; psychosocial scores add no explanatory power</em></p>
+<hr>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<ul>
+<li>Psychosocial variables showed no statistically significant relationship with hypermobility.</li>
+<li>Age/gender effects robust across missing‑data handling methods.</li>
+<li>Findings align with literature: younger females exhibit greater hypermobility. ### Limitations
+<ol type="1">
+<li><strong>Data quality</strong> – 47–64% missingness in psychosocial scores despite MICE.</li>
+<li><strong>Sampling frame</strong> – clinic patients already in pain, so hypermobility’s incremental effect may be muted.</li>
+<li><strong>External validity</strong> – results may not extend to general populations or non‑hip conditions.</li>
+</ol></li>
+</ul>
+<section id="recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="recommendations">Recommendations</h3>
+<ul>
+<li><strong>Clinicians:</strong> Psychosocial screening may not enhance hypermobility risk assessment in a clinic population.</li>
+<li><strong>Researchers:</strong> Examine general‑population samples to clarify psychosocial impacts of hypermobility.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="interactive-app" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-app">Interactive App</h2>
+<p>All analyses can be reproduced via our <a href="https://schneiderstats.shinyapps.io/hypermobility_app/">Shiny app</a>, which allows data upload, imputation, visualization, and regression without coding.</p>
+<hr>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p><em>Full references available in the original report and slides. Key sources include:</em></p>
+<ul>
+<li>Amtmann, Dagmar, Karon F Cook, Mark P Jensen, Wen-Hung Chen, Seung Choi, Dennis Revicki, David Cella, et al.&nbsp;2010. “Development of a PROMIS Item Bank to Measure Pain Interference.” Pain 150 (1): 173–82.</li>
+<li>Hampton, SN, PA Nakonezny, HM Richard, and JE Wells. 2019. “Pain Catastrophizing, Anxiety, and Depression in Hip Pathology.” The Bone &amp; Joint Journal 101 (7): 800–807.&nbsp;</li>
+<li>Schmidt, Amand F., and Chris Finan. 2018. “Linear Regression and the Normality Assumption.” Journal of Clinical Epidemiology 98: 146–51.https://doi.org/https://doi.org/10.1016/j.jclinepi.2017.12.006.</li>
+</ul>
+<hr>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
