@@ -56,7 +56,7 @@ Exploratory research on the link between hip hypermobility and psychosocial outc
 **Highlights:** Refutes common assumptions in the clinical literature and demonstrates statistical workflow from EDA to deployment.
 - **[Read the full technical report ](/HypermobilityReport_Schneider_Taylor_final.pdf)**
 - [Shiny App Demo](https://schneiderstats.shinyapps.io/hypermobility_app/)
-- [Hip Hypermobility Analysis Blog](/hypermobility_blog.html)
+- [Hip Hypermobility Analysis Blog](/hypermobility_blog.html) 
 
 ---
 
