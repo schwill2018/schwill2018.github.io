@@ -53,8 +53,9 @@ Dual Supervision Recommendation Engine:
 Exploratory research on the link between hip hypermobility and psychosocial outcomes:  
 - Multiple regression and imputation (MICE/KNN)
 - Custom Shiny dashboard for interactive analysis  
-**Highlights:** Refutes common assumptions in the clinical literature and demonstrates statistical workflow from EDA to deployment.  
+**Highlights:** Refutes common assumptions in the clinical literature and demonstrates statistical workflow from EDA to deployment.
+- **[Read the full technical report (DOCX)](/HypermobilityReport_Schneider_Taylor_final.docx)**
 - [Shiny App Demo](https://schneiderstats.shinyapps.io/hypermobility_app/)  
-- [Read Blog Post](/blog/2024-12-01-hypermobility-analysis)
+- [View blog post summary](/blog/2024-12-01-hypermobility-analysis)
 
 ---
