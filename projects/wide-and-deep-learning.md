@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: page
 title: "Wide and Deep Learning: Custom Multi-Layer Perceptron from Scratch"
 permalink: /projects/wide-and-deep-learning/
 summary: "Engineered a multi-layer perceptron (MLP) from scratch in Python using object-oriented programming, demonstrating foundational and advanced deep learning concepts, interpretability, and extensibility without reliance on high-level libraries."
