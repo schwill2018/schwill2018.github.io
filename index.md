@@ -7,9 +7,9 @@ author_profile: true  # shows avatar & bio if you add one later
 
 # About Me
 
-**William Schneider** is a Data Scientist and Statistician based in Dallas, Texas, with deep expertise in predictive analytics, statistical modeling, and machine learning. He currently works as an Asset Manager for a Dallas-based family office, where he streamlines financial processes through automation, data-driven solutions, and strategic decision-making.
+**Will Schneider** is a Data Scientist and Statistician based in Dallas, Texas, with deep expertise in predictive analytics, statistical modeling, and machine learning. He currently works as an Asset Manager for a Dallas-based family office, where he streamlines financial processes through automation, data-driven solutions, and strategic decision-making.
 
-William holds a **Master of Science aplied Statistics** from Southern Methodist University, and a **Bachelor of Science in Economics** from the University of Texas at Dallas.
+Will holds a **Master of Science aplied Statistics** from Southern Methodist University, and a **Bachelor of Science in Economics** from the University of Texas at Dallas.
 
 His analytical experience spans finance, healthcare, and sports analytics, characterized by robust data-driven solutions and innovative methodologies.
 
