@@ -50,13 +50,6 @@ The Applied Data Science Capstone project centered on building a **hybrid machin
 - **Libraries:** scikit-learn (KMeans, KNN), pandas, numpy, matplotlib, seaborn
 - **Deployment:** Jupyter Notebooks, GitHub
 
-## Visualizations & Screenshots
-
-*Include cluster visualizations, feature importances, and ranked recommendation lists as appropriate:*
-
-![Cluster Visualization](path/to/cluster_viz.png)
-![Ranked Recommendation Output](path/to/ranked_recommendations.png)
-
 ## GitHub Repository & Additional Links
 
 - [GitHub: Full code and documentation](https://github.com/schwill2018/applied_datascience_capstone)
