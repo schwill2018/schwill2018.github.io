@@ -1,0 +1,9 @@
+---
+layout: post
+---
+{% if page.external_url %}
+  <script>location.href = "{{ page.external_url }}";</script>
+  <p><a href="{{ page.external_url }}">Continue to external article</a></p>
+{% else %}
+  {{ content }}
+{% endif %}
