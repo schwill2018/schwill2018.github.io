@@ -8,8 +8,9 @@ baseurl: ""                                  # user/org site → leave empty
 
 plugins:                                     # all allowed by GitHub Pages
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # make everything in _pages render at /<filename>/
 collections:
