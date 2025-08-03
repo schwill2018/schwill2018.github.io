@@ -3,7 +3,7 @@ tagline: Data Science Portfolio
 url: https://schwill2018.github.io
 baseurl: ""   # keep empty for user site
 
-remote_theme: cotes2020/jekyll-theme-chirpy
+remote_theme: mmistakes/minimal-mistakes
 
 lang: en
 timezone: America/Chicago
