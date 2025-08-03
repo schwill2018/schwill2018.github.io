@@ -10,7 +10,7 @@ tags: [K-Means, KNN, Clustering, Personalization, Python, Data Science Capstone]
 
 ## Project Overview
 
-The Applied Data Science Capstone project centered on building a **hybrid machine learning recommendation engine** to identify optimal living environments for users. The system integrates unsupervised and supervised learning—first clustering neighborhoods using K-Means, then leveraging K-Nearest Neighbors (KNN) to generate ranked, personalized neighborhood recommendations based on user preferences and lifestyle data.
+The Applied Data Science Capstone project centered on building a **hybrid machine learning recommendation engine** to identify optimal living environments for users. The system integrates unsupervised and supervised learning. First, neighborhoods were clustered using K-Means, then K-Nearest Neighbors (KNN) was leveraged to generate ranked, personalized neighborhood recommendations based on user preferences and lifestyle data.
 
 ## Methodology
 
@@ -27,7 +27,8 @@ The Applied Data Science Capstone project centered on building a **hybrid machin
 
 - **Stage 1: K-Means Clustering**
   - Grouped neighborhoods into clusters with similar profiles (housing, safety, lifestyle).
-  - Identified macro-level fit for user preferences—users only compared to neighborhoods in their best-fit cluster.
+  - Identified macro-level fit for user preferences
+  - Users only compared to neighborhoods in their best-fit cluster.
 - **Stage 2: K-Nearest Neighbors (KNN) Personalization**
   - For a given user, identified similar user-neighborhood preference pairs within the cluster using KNN.
   - Produced a personalized, ranked shortlist of ideal neighborhoods.
