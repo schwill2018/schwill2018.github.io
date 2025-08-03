@@ -3,15 +3,13 @@ name: Build and Deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - schwill2018-patch-chirpy
+      - schwill2018-patch-chirpy   # <- Change if your working branch is different
 
 jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
