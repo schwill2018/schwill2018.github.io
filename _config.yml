@@ -1,32 +1,46 @@
-title: "William Schneider | Data Science Portfolio"
-description: "Portfolio showcasing data science projects by William Schneider, specializing in predictive analytics, statistical modeling, sports analytics, and machine learning."
+title: Will Schneider
+tagline: Data Science Portfolio
+url: https://schwill2018.github.io
+baseurl: ""   # keep empty for user site
 
-remote_theme: "mmistakes/minimal-mistakes"   # pulls the theme
+remote_theme: cotes2020/jekyll-theme-chirpy
 
-url: "https://schwill2018.github.io"         # for canonical links
-baseurl: ""                                  # user/org site → leave empty
+lang: en
+timezone: America/Chicago
 
-plugins:                                     # all allowed by GitHub Pages
-  - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-seo-tag
+plugins:
+  - jekyll-remote-theme
   - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# make everything in _pages render at /<filename>/
-collections:
-  pages:
-    output: true
-    permalink: /:path/
+# Chirpy options
+theme_mode: light
+paginate: 10
+paginate_path: page:num
+toc: true
 
-# default layout for pages/posts
+# Social
+social:
+  name: Will Schneider
+  email: will@brookwaterlabs.com
+  links:
+    - https://github.com/schwill2018
+    - https://www.linkedin.com/in/willschneider214
+# Analytics (optional)
+google_site_verification: google49f59bdc284310ae.html
+# google_analytics:
+#   id: G-XXXXXX
+
+# Permalinks
+permalink: /:categories/:title/
+
+# Feed and sitemap
+feed:
+  path: atom.xml
+
 defaults:
-  - scope:
-      path: ""
-      type: pages
+  - scope: { path: "" }
     values:
-      layout: single
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
+      layout: post
+      author: "Will Schneider"
