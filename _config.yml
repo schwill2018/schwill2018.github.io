@@ -33,7 +33,7 @@ google_site_verification: google49f59bdc284310ae
 #   id: G-XXXXXX
 
 # Permalinks
-permalink: /:categories/:title/
+permalink: "/:categories/:title/"
 
 # Feed and sitemap
 feed:
