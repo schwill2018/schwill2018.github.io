@@ -10,7 +10,7 @@ tags: [Multi-Layer Perceptron, Neural Networks, Python, OOP, Keras, TensorFlow, 
 
 ## Project Overview
 
-This project explores the construction and training of multi-layer perceptrons (MLP) from scratch in Python, highlighting a hands-on approach to deep learning model architecture, interpretability, and extension. Unlike typical projects that depend entirely on frameworks like TensorFlow or PyTorch, this work implements essential deep learning logic using class-based architecture and low-level Python constructs—ensuring transparent model behavior and full control over each component.
+This project explores the construction and training of multi-layer perceptrons (MLP) from scratch in Python, highlighting a hands-on approach to deep learning model architecture, interpretability, and extension. Unlike typical projects that depend entirely on frameworks like TensorFlow or PyTorch, this work implements essential deep learning logic using class-based architecture and low-level Python constructs, which ensures transparent model behavior and full control over each component.
 
 ## Methodology
 
@@ -19,7 +19,7 @@ This project explores the construction and training of multi-layer perceptrons (
 - **Manual Neural Network Construction**:  
   Developed all layers, activation functions (ReLU, sigmoid, etc.), and loss calculations from first principles using Python classes, without abstracting away complexity via Keras/PyTorch modules.
 - **Stepwise Implementation**:  
-  Built the network one step at a time—starting from forward propagation, loss calculation, and gradient computation to backpropagation and weight updates.
+  Built the network one step at a time, starting from forward propagation, loss calculation, and gradient computation to backpropagation and weight updates.
 - **Custom Training Loop**:  
   Designed an end-to-end training routine to support batch processing, mini-batching, epoch control, and performance logging.
 - **Interpretability Focus**:  
@@ -40,9 +40,9 @@ This project explores the construction and training of multi-layer perceptrons (
 - **Educational Value**:  
   Provides a robust foundation for students and practitioners wanting to understand the mechanics of backpropagation, gradient descent, and the impact of architecture changes.
 - **Performance Validation**:  
-  Benchmarked custom model results against Keras/TensorFlow MLPs—achieving comparable accuracy on structured data tasks and validating the correctness of your custom implementation.
+  Benchmarked custom model results against Keras/TensorFlow MLPs. Comparable accuracy achieved on structured data tasks and validating the correctness of a custom implementation.
 - **Extensibility**:  
-  Codebase is modular—future architectures (e.g., convolutional layers, custom activations) can be integrated without rewriting the core logic.
+  Codebase is **modular**; future architectures (e.g., convolutional layers, custom activations) can be integrated without rewriting the core logic.
 
 ## Example Results
 
