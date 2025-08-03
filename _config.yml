@@ -13,12 +13,13 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
 
 # Chirpy options
-theme_mode: light
-paginate: 10
-paginate_path: page:num
-toc: true
+# theme_mode: light
+# paginate: 10
+# paginate_path: page:num
+# toc: true
 
 # Social
 social:
