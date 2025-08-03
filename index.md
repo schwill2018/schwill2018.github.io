@@ -41,4 +41,4 @@ Connect with me:
 - **GitHub:** [github.com/schwill2018](https://github.com/schwill2018)  
 - **Email:** [will@brookwaterlabs.com](mailto:will@brookwaterlabs.com)
 
-Explore highlights of my projects under the **[Projects tab](./projects)** or read my **[latest blog posts](./blogs)**.
+Explore highlights of my projects under the **[Projects tab](./projects)** or read my **[latest blog posts](./blog)**.
