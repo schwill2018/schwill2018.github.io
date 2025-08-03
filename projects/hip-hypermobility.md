@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: page
 title: "Statistical Analysis of Hip Hypermobility and Psychosocial Outcomes"
 permalink: /projects/hip-hypermobility/
 summary: "Applied linear and logistic regression with multiple imputation to clinical data, assessing the relationship between hip hypermobility and psychosocial variables in 445 patients. Results published with an interactive Shiny dashboard."
