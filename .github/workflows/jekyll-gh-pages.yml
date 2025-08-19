@@ -23,6 +23,7 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
+      - run: gem install bundler
       - run: bundle install --path vendor/bundle
 
       - name: Build Jekyll with secret override
