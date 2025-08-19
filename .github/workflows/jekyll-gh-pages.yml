@@ -1,4 +1,5 @@
 name: Build & Deploy Jekyll (Pages)
+
 on:
   push:
     branches: [schwill2018-patch-chirpy]
@@ -9,7 +10,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -23,15 +24,10 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
-      - run: gem install bundler
       - run: bundle install --path vendor/bundle
 
-      - name: Build Jekyll with secret override
-        env:
-          GOOGLE_SITE_ID: ${{ secrets.GOOGLE_SITE_ID }}
-        run: |
-          printf "webmaster_verifications:\n  google: %s\n" "$GOOGLE_SITE_ID" > _config.secret.yml
-          bundle exec jekyll build --config _config.yml,_config.secret.yml -d _site
+      - name: Build Jekyll
+        run: bundle exec jekyll build -d _site
 
       - uses: actions/upload-pages-artifact@v3
         with:
