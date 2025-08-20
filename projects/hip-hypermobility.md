@@ -48,11 +48,11 @@ This project investigates whether psychosocial factors such as pain catastrophiz
 ## Interactive Dashboard
 
 Explore all results and rerun analyses with new data:
-- [Interactive Shiny App**](https://schneiderstats.shinyapps.io/hypermobility_app/)
+- [**Interactive Shiny App**](https://schneiderstats.shinyapps.io/hypermobility_app/)
 
 ## Further Reading
 
-- **[Blog Post: Exploring the Relationship Between Hip Hypermobility and Psychosocial Outcomes]**(/hypermobility_blog.html)
+- [**Blog Post: Exploring the Relationship Between Hip Hypermobility and Psychosocial Outcomes**](/hypermobility_blog.html)
 
 ## Conclusion & Next Steps
 
