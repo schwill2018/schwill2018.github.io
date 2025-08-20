@@ -1,11 +1,3 @@
----
-layout: post
-title: "NHL Game Predictions: Model Comparison and Betting Edge"
-categories: [sports, analytics]
-tags: [NHL, prediction, ensemble, machine learning, sports betting]
-description: "Comparing GLM, Random Forest, XGBoost, and Neural Network models to forecast NHL games and analyze bookmaker odds."
----
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
@@ -2990,43 +2982,10 @@ vertical-align: -.125em;
 
 </head>
 
-<body>
+<body class="fullcontent">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#backdrop" id="toc-backdrop" class="nav-link active" data-scroll-target="#backdrop">Backdrop</a></li>
-  <li><a href="#the-first-run-player-point-prediction" id="toc-the-first-run-player-point-prediction" class="nav-link" data-scroll-target="#the-first-run-player-point-prediction">The First Run: Player Point Prediction</a></li>
-  <li><a href="#revamped-model-game-prediction" id="toc-revamped-model-game-prediction" class="nav-link" data-scroll-target="#revamped-model-game-prediction">Revamped Model: Game Prediction</a>
-  <ul class="collapse">
-  <li><a href="#why-predicting-nhl-games-is-so-challenging" id="toc-why-predicting-nhl-games-is-so-challenging" class="nav-link" data-scroll-target="#why-predicting-nhl-games-is-so-challenging">Why predicting NHL games is so challenging</a></li>
-  <li><a href="#data-collection-and-feature-engineering" id="toc-data-collection-and-feature-engineering" class="nav-link" data-scroll-target="#data-collection-and-feature-engineering">Data collection and feature engineering</a></li>
-  <li><a href="#modeling-approaches-and-feature-selection" id="toc-modeling-approaches-and-feature-selection" class="nav-link" data-scroll-target="#modeling-approaches-and-feature-selection">Modeling Approaches and Feature Selection</a></li>
-  <li><a href="#crossvalidation-and-the-woes-of-prospective-modeling" id="toc-crossvalidation-and-the-woes-of-prospective-modeling" class="nav-link" data-scroll-target="#crossvalidation-and-the-woes-of-prospective-modeling">Cross‑validation (and the woes of prospective modeling)</a></li>
-  <li><a href="#probability-calibration" id="toc-probability-calibration" class="nav-link" data-scroll-target="#probability-calibration">Probability calibration</a></li>
-  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance">Model performance</a></li>
-  </ul></li>
-  <li><a href="#deployed-model-evaluation" id="toc-deployed-model-evaluation" class="nav-link" data-scroll-target="#deployed-model-evaluation">Deployed model evaluation</a></li>
-  <li><a href="#financial-analysis-betting-context" id="toc-financial-analysis-betting-context" class="nav-link" data-scroll-target="#financial-analysis-betting-context">Financial Analysis: Betting Context</a></li>
-  <li><a href="#expected-value-and-edge-filters" id="toc-expected-value-and-edge-filters" class="nav-link" data-scroll-target="#expected-value-and-edge-filters">Expected value and edge filters</a>
-  <ul class="collapse">
-  <li><a href="#expected-value-across-bookmakers" id="toc-expected-value-across-bookmakers" class="nav-link" data-scroll-target="#expected-value-across-bookmakers">Expected Value Across Bookmakers</a></li>
-  <li><a href="#implied-probability-spread-and-vig-buffers-by-team" id="toc-implied-probability-spread-and-vig-buffers-by-team" class="nav-link" data-scroll-target="#implied-probability-spread-and-vig-buffers-by-team">Implied Probability Spread and Vig Buffers by Team</a></li>
-  <li><a href="#bookmaker-vig-landscape" id="toc-bookmaker-vig-landscape" class="nav-link" data-scroll-target="#bookmaker-vig-landscape">Bookmaker Vig Landscape</a></li>
-  </ul></li>
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting It All Together</a></li>
-  <li><a href="#lessons-learned-and-future-directions" id="toc-lessons-learned-and-future-directions" class="nav-link" data-scroll-target="#lessons-learned-and-future-directions">Lessons Learned and Future Directions</a>
-  <ul class="collapse">
-  <li><a href="#the-power-of-elo-ratings" id="toc-the-power-of-elo-ratings" class="nav-link" data-scroll-target="#the-power-of-elo-ratings">The Power of Elo Ratings</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-</nav>
-</div>
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
