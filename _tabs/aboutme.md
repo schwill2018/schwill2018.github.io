@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: default
 title: About
 icon: fas fa-user
 order: 4
