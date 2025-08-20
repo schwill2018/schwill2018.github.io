@@ -2,7 +2,7 @@
 layout: about
 title: About
 icon: fas fa-user
-order: 1
+order: 4
 ---
 
 # Will Schneider
