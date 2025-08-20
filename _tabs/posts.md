@@ -1,12 +1,8 @@
 ---
-layout: posts
+layout: blog
 title: Blog
-icon: fas fa-stream
+icon: fas fa-fw fa-blog
 order: 3
+permalink: /posts/
+description: "Analysis, walkthroughs, and technical articles."
 ---
-
-## Blog
-
-Analysis, walkthroughs, and technical articles are shown below.  
-Recent posts include in-depth project blogs and data-driven case studies.
-

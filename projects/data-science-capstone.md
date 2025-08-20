@@ -52,8 +52,8 @@ The Applied Data Science Capstone project centered on building a **hybrid machin
 
 ## GitHub Repository & Additional Links
 
-- [GitHub: Full code and documentation](https://github.com/schwill2018/applied_datascience_capstone)
-- [LinkedIn Article: Dual-Layer Recommendation Engine Summary](https://www.linkedin.com/pulse/dual-supervision-recommendation-engine-find-ideal-living-schneider/)
+- [**GitHub: Full code and documentation**](https://github.com/schwill2018/applied_datascience_capstone)
+- [**LinkedIn Article: Dual-Layer Recommendation Engine Summary**](https://www.linkedin.com/pulse/dual-supervision-recommendation-engine-find-ideal-living-schneider/)
 
 ## Conclusion & Future Work
 

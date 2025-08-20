@@ -48,8 +48,8 @@ This project focuses on building and comparing multiple machine learning models 
 
 ## GitHub Repository & Further Reading
 
-- [Full code and detailed results](https://github.com/schwill2018/hockeypreds)
-- [NHL Predictions Project – Analysis and Commentary](/nhl_predictions_blog.html)
+- [**Full code and detailed results**](https://github.com/schwill2018/hockeypreds)
+- [**NHL Predictions Project – Analysis and Commentary**](/nhl_predictions_blog.html)
 
 ## Conclusion & Next Steps
 

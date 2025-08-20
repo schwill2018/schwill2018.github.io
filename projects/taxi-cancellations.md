@@ -55,7 +55,7 @@ This project aimed to optimize taxi service reliability and operational efficien
 
 ## GitHub Repository & Additional Resources
 
-- [GitHub: Taxi Cancellations Predictive Analysis](https://github.com/schwill2018/Taxi-Cancellations---A-Predictive-Model-Analysis/tree/main)
+- [**GitHub: Taxi Cancellations Predictive Analysis**](https://github.com/schwill2018/Taxi-Cancellations---A-Predictive-Model-Analysis/tree/main)
 
 ## Conclusion & Business Implications
 

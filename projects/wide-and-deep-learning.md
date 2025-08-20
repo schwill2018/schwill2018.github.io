@@ -52,7 +52,7 @@ This project explores the construction and training of multi-layer perceptrons (
 
 ## GitHub Repository
 
-- [Full code, notebooks, and documentation](https://github.com/schwill2018/Wide-and-Deep-Learning-with-Tensorflow-Keras)
+- [**Full code, notebooks, and documentation**](https://github.com/schwill2018/Wide-and-Deep-Learning-with-Tensorflow-Keras)
 
 ## Conclusion & Future Work
 
