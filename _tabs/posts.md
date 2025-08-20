@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: post
 title: Blog
 icon: fas fa-fw fa-blog
 order: 3
