@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Using Data Science to Predict NHL Games
-date: 2025-08-03
 categories: [sports, analytics, Machine Learning]
 tags: [machine learning, NHL, hockey, API, betting, calibration, ROC-AUC, stacking, tidymodels, xgboost, keras, odds, random forest, neural network, logistic regression, prediction, sports]
 description: "Comparing GLM, RF, XGBoost, and NN for NHL forecasting with odds integration."

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Dual Supervision: Smarter Recommendations for Living Spaces"
-date: 2025-08-20
-categories: [Projects, Machine Learning]
+date: 2020-09-18
+categories: [Machine Learning]
 tags: [Recommender Systems, AI, Dual Supervision]
 ---
 
