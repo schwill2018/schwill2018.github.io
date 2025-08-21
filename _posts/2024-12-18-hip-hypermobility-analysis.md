@@ -7,11 +7,11 @@ description: "Large clinical dataset analysis. Age and gender, not pain scores, 
 ---
 
 <iframe
-  src="{{ '/_posts/2024-12-18-hip-hypermobility-analysis.html' | relative_url }}"
+  src="{{ '/files/2024-12-18-hip-hypermobility-analysis.html' | relative_url }}"
   width="100%"
   height="1800"
   style="border:0"
   loading="lazy"
 ></iframe>
 
-<p><a href="{{ '/_posts/2024-12-18-hip-hypermobility-analysis.html' | relative_url }}">Open full screen</a></p>
+<p><a href="{{ '/files/2024-12-18-hip-hypermobility-analysis.html' | relative_url }}">Open full screen</a></p>
