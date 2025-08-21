@@ -7,7 +7,7 @@ order: 4
 
 # Will Schneider
 
-Data Scientist and Statistician based in Dallas, Texas, specializing in predictive analytics, statistical modeling, and machine learning. I currently serve as Asset Manager for a Dallas family office, streamlining financial processes through automation, data-driven tools, and strategic decision-making.
+Data Scientist and Statistician based in Dallas, Texas, specializing in predictive analytics, statistical modeling, and machine learning. I currently am an Asset Manager; streamlining financial processes through automation, data-driven tools, and strategic decision-making.
 
 **Education:**  
 - Master of Science, Applied Statistics, Southern Methodist University  
