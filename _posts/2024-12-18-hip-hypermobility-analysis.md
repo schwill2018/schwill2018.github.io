@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exploring the Relationship Between Hip Hypermobility and Psychosocial Outcomes
-categories: [research, clinical]
+categories: [research, statistical analysis]
 tags: [regression, imputation, shiny, MICE, Beighton, pain, research, clinical]
 description: "Large clinical dataset analysis. Age and gender, not pain scores, drive Beighton hypermobility outcomes. Full results with interactive Shiny app."
 ---
