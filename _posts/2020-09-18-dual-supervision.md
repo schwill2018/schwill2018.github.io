@@ -8,9 +8,6 @@ categories: [Machine Learning, Project]
 tags: [dual supervision, semi-supervised, weak supervision, label models]
 ---
 
-## Overview
-Short summary of the project, goals, and results.
-
 ## Original Post
 <iframe
   src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6712860962023718912?collapsed=1"
@@ -21,7 +18,5 @@ Short summary of the project, goals, and results.
   title="Embedded post">
 </iframe>
 
-<p><a href="https://www.linkedin.com/feed/update/urn:li:share:XXXXXXXXXXXX" target="_blank" rel="noopener">Open on LinkedIn</a></p>
+**Direct link:** <https://www.linkedin.com/pulse/dual-supervision-recommendation-engine-find-ideal-living-schneider>
 
-## Details
-- Approach, dataset, metrics, and links as needed.
