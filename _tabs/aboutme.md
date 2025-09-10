@@ -29,7 +29,7 @@ Data Scientist and Statistician based in Dallas, Texas, specializing in predicti
 - IBM Data Science Professional ([verify](https://www.coursera.org/account/accomplishments/specialization/A5VEV78XD464))
 
 **Contact**  
-- [LinkedIn](https://linkedin.com/in/schneiderwilliam)
+- [LinkedIn](https://linkedin.com/in/willschneider214)
 - [GitHub](https://github.com/schwill2018)
 - [Email](mailto:will@brookwaterlabs.com)
 
