@@ -56,7 +56,21 @@ addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const q = document.querySelector("#quarto-content");
+  if (q) {
+    q.style.backgroundColor = "#fff";
+    q.style.color = "#111";
+    q.querySelectorAll("table, th, td, pre, code").forEach(el => {
+      el.style.backgroundColor = "#fff";
+      el.style.color = "#111";
+      el.style.borderColor = "#ddd";
+    });
+    q.querySelectorAll("img").forEach(el => el.style.filter = "none");
+  }
+});
+</script>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
