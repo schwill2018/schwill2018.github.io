@@ -7,28 +7,49 @@ tags: [regression, imputation, shiny, MICE, Beighton, pain, clinical]
 permalink: /posts/hip-hypermobility-analysis/
 ---
 
+<!-- force Quarto section to stay light + kill floating TOC -->
+
+<meta name="color-scheme" content="light">
+
 <style>
-/* 1) remove the floating/dropdown TOC button that Quarto injects */
+/* --- TOC --- */
+/* remove floating/dropdown TOC button Quarto injects */
 #quarto-toc-toggle { display: none !important; }
 
-/* 2) keep the report light even when site is dark */
-:root { color-scheme: light !important; }
-body.quarto-light, #quarto-content, #quarto-document-content {
-  background: #fff !important; color: #111 !important;
+/* --- Dark mode overrides --- */
+html[data-mode="dark"] .post-content #quarto-content,
+html[data-mode="dark"] .post-content #quarto-content * {
+  background-color: #fff !important;
+  color: #111 !important;
 }
 
-/* override dark table skin if present */
-.lightable-material-dark,
-.lightable-material-dark td,
-.lightable-material-dark th {
-  background: #fff !important;
+/* Tables */
+html[data-mode="dark"] .post-content #quarto-content table,
+html[data-mode="dark"] .post-content #quarto-content th,
+html[data-mode="dark"] .post-content #quarto-content td {
+  background-color: #fff !important;
   color: #111 !important;
   border-color: #ddd !important;
+}
+
+/* Code blocks and callouts */
+html[data-mode="dark"] .post-content #quarto-content pre,
+html[data-mode="dark"] .post-content #quarto-content code,
+html[data-mode="dark"] .post-content #quarto-content .callout,
+html[data-mode="dark"] .post-content #quarto-content .panel-tabset {
+  background-color: #fff !important;
+  color: #111 !important;
+  border-color: #ddd !important;
+}
+
+/* Cancel Chirpy dark-mode image dimming */
+html[data-mode="dark"] .post-content #quarto-content img {
+  filter: none !important;
 }
 </style>
 
 <script>
-/* belt-and-suspenders: if Quarto still adds the toggle, remove it */
+/* belt-and-suspenders: remove TOC button if still injected */
 addEventListener('DOMContentLoaded', () => {
   const t = document.getElementById('quarto-toc-toggle');
   if (t) t.remove();
