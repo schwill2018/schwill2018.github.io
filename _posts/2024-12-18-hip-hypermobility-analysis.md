@@ -6,7 +6,7 @@ tags: [regression, imputation, shiny, MICE, Beighton, pain, research, clinical]
 description: "Large clinical dataset analysis. Age and gender, not pain scores, drive Beighton hypermobility outcomes. Full results with interactive Shiny app."
 ---
 
-[Open full Quarto report (HTML)](/files/2024-12-18-hip-hypermobility-analysis.html)
+[Open full Quarto report (HTML)](/projects/hip-hypermobility-analysis/)
 
 <!-- <iframe
   src="{{ '/files/2024-12-18-hip-hypermobility-analysis.html' | relative_url }}"
