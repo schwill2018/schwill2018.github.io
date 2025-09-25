@@ -8,37 +8,33 @@ permalink: /posts/nhl-predictions/
 ---
 
 <style>
-/* keep sidebar TOC, remove floating/dropdown toc trigger */
-.toc-dropdown,
-.toc-actions,
-.toc-floating,
-.toc-overlay,
-a[href="#TOC"].dropdown-toggle,
-button[aria-controls="TOC"],
-[data-bs-target="#TOC"],
-[data-target="#TOC"] { display: none !important; }
+/* 1) remove the floating/dropdown TOC button that Quarto injects */
+#quarto-toc-toggle { display: none !important; }
 
-/* optional: keep report in light look so Chirpy dark mode doesn't invert */
+/* 2) keep the report light even when site is dark */
 :root { color-scheme: light !important; }
-html, body, #quarto-content { background:#fff !important; color:#111 !important; }
-table, th, td { background:#fff !important; color:#111 !important; }
+body.quarto-light, #quarto-content, #quarto-document-content {
+  background: #fff !important; color: #111 !important;
+}
+
+/* override dark table skin if present */
+.lightable-material-dark,
+.lightable-material-dark td,
+.lightable-material-dark th {
+  background: #fff !important;
+  color: #111 !important;
+  border-color: #ddd !important;
+}
 </style>
 
 <script>
-(function () {
-  function killFloatingToc() {
-    const sel = [
-      '.toc-dropdown','.toc-actions','.toc-floating','.toc-overlay',
-      'a[href="#TOC"]','button[aria-controls="TOC"]','[data-bs-target="#TOC"]','[data-target="#TOC"]'
-    ].join(',');
-    document.querySelectorAll(sel).forEach(el => {
-      if (!el.closest('#quarto-margin-sidebar')) el.remove(); // preserve sidebar TOC
-    });
-  }
-  if (document.readyState !== 'loading') killFloatingToc();
-  else document.addEventListener('DOMContentLoaded', killFloatingToc);
-})();
+/* belt-and-suspenders: if Quarto still adds the toggle, remove it */
+addEventListener('DOMContentLoaded', () => {
+  const t = document.getElementById('quarto-toc-toggle');
+  if (t) t.remove();
+});
 </script>
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
