@@ -95,7 +95,7 @@ Regime shifts and vendor changes rewrite the script. Reporting lag can smear mon
 If you are an executive and made it this far, bravo and congratulations. Your proverbial work shoes are probably stained by the proverbial weeds you have been in for the last 30 minutes. That kind of endurance deserves a high‑level version (HTML below). For readers interested in the technical side, the full source is also available.
 
 **Open the executive HTML report:**
-**👉 [View the report]({{ '/projects/aircraft-ts-report/' | relative_url }})**
+**👉 [View the report]({{ '/files/2025-09-16-aircraft-ts-report.html' | relative_url }})**
 
 **Browse the source and the rendered artifact:**
 **👉 <https://github.com/schwill2018/aircraft-ts-analysis>**
