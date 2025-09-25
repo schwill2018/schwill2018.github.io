@@ -6,7 +6,7 @@ tags: [machine learning, NHL, hockey, API, betting, calibration, ROC-AUC, stacki
 description: "Comparing GLM, RF, XGBoost, and NN for NHL forecasting with odds integration."
 ---
 
-[Open full Quarto report (HTML)](/projects/nhl-predictions/)
+[Open full Quarto report (HTML)](/files/2025-08-03-nhl-predictions.html)
 
 <!-- <iframe
   src="{{ '/files/2025-08-03-nhl-predictions.html' | relative_url }}"
