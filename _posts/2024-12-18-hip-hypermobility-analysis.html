@@ -7,6 +7,39 @@ tags: [regression, imputation, shiny, MICE, Beighton, pain, clinical]
 permalink: /posts/hip-hypermobility-analysis/
 ---
 
+<style>
+/* keep sidebar TOC, remove floating/dropdown toc trigger */
+.toc-dropdown,
+.toc-actions,
+.toc-floating,
+.toc-overlay,
+a[href="#TOC"].dropdown-toggle,
+button[aria-controls="TOC"],
+[data-bs-target="#TOC"],
+[data-target="#TOC"] { display: none !important; }
+
+/* optional: keep report in light look so Chirpy dark mode doesn't invert */
+:root { color-scheme: light !important; }
+html, body, #quarto-content { background:#fff !important; color:#111 !important; }
+table, th, td { background:#fff !important; color:#111 !important; }
+</style>
+
+<script>
+(function () {
+  function killFloatingToc() {
+    const sel = [
+      '.toc-dropdown','.toc-actions','.toc-floating','.toc-overlay',
+      'a[href="#TOC"]','button[aria-controls="TOC"]','[data-bs-target="#TOC"]','[data-target="#TOC"]'
+    ].join(',');
+    document.querySelectorAll(sel).forEach(el => {
+      if (!el.closest('#quarto-margin-sidebar')) el.remove(); // preserve sidebar TOC
+    });
+  }
+  if (document.readyState !== 'loading') killFloatingToc();
+  else document.addEventListener('DOMContentLoaded', killFloatingToc);
+})();
+</script>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
@@ -3211,19 +3244,6 @@ background-color: #00000008;
 border: 0;
 }
 </style>
-
-<style>
-body, table, .cell, .quarto-light {
-  background-color: #fff !important;
-  color: #000 !important;
-}
-</style>
-
-<style>
-#quarto-margin-sidebar { display: none; }
-</style>
-
-</head>
 
 <body>
 
