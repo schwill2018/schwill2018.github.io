@@ -20,34 +20,34 @@ There’s an old line about business aviation: if the jet isn’t flying, it’s
 This post walks the path I took to answer that, then points you to the executive-friendly report. The exec read keeps the conclusions and trims the jargon. This one keeps the signal.
 
 **Aircraft and windows**
-Global Express (GLEX): Apr-2021 to Jul-2025
-Learjet 60: May-2022 to Jul-2025
+Large-cabin Business Jet: Apr-2021 to Jul-2025
+Small-cabin Business Jet: May-2022 to Jul-2025
 
 ## What the data say at a glance
 
 The first pass was decomposition. What remains if trend and seasonality are peeled away from the noise? Then I checked autocorrelation and basic spectra. There isn’t much forecastable seasonality that survives those checks. ARIMA does not grab a strong seasonal pattern either, which already tells you something about how far you can push a forecast before you leave the lane.
 
-Hours are the driver. Maintenance responds with slight lags and cost pulses. Both lose memory fast. On the GLEX, you can see a quarterly pulse in maintenance, while hours are maintained in short runs. On the Lear 60, you see a steady baseline after logging, followed by occasional spikes that are clearly event-driven. That difference matters for planning. (rhythmic for GLEX and tactical for Lear 60). It also explains why most useful guidance tends to reside at short horizons.
+Hours are the driver. Maintenance responds with slight lags and cost pulses. Both lose memory fast. On the large-cabin jet, you can see a quarterly pulse in maintenance, while hours are maintained in short runs. On the small-cabin jet, you see a steady baseline after logging, followed by occasional spikes that are clearly event-driven. That difference matters for planning. (rhythmic for the large-cabin jet and tactical for small-cabin). It also explains why most useful guidance tends to reside at short horizons.
 
-Short horizons carry signal because the system has a short memory. Hours cluster for a few months at a time. Maintenance reacts in the same window. That gives you usable guidance for the next one to four months, but beyond that, the patterns become erratic. GLEX’s quarterly wave drifts in phase. Lear 60 never locks into a repeatable rhythm. Real life barges in: vendor slots, parts delays, inspections that slide, and one-off events. At that point, you are not forecasting a pattern so much as trying to time future surprises. Anything beyond four months behaves more like one-off events than time-series components.
+Short horizons carry signal because the system has a short memory. Hours cluster for a few months at a time. Maintenance reacts in the same window. That gives you usable guidance for the next one to four months, but beyond that, the patterns become erratic. The large-cabin jet’s quarterly wave drifts in phase. The small-cabin never locks into a repeatable rhythm. Real life barges in: vendor slots, parts delays, inspections that slide, and one-off events. At that point, you are not forecasting a pattern so much as trying to time future surprises. Anything beyond four months behaves more like one-off events than time-series components.
 
 For all results below, I report 95 percent intervals for horizons 1 through 4. That is the operational window that matters.
 
-## The GLEX story
+## The Large-cabin Business Jet story
 
-GLEX breathes in quarters. Costs pulse, then back off, then pulse again. Hours are not wild, but they have a two- to three-month operating rhythm with real near-term persistence. Put those together, and you get a planning signal you can act on for one to four months.
+The large-cabin jet breathes in quarters. Costs pulse, then back off, then pulse again. Hours are not wild, but they have a two- to three-month operating rhythm with real near-term persistence. Put those together, and you get a planning signal you can act on for one to four months.
 
 Practical translation: stage parts near the quarterly crests, shift lighter work into troughs, and set short labor bands to the 2–3 month rhythm. My role here is surfacing the 1–4 month signal behind that.
 
 What the charts show: the seasonal bump repeats roughly each quarter, the hours ACF stays positive for a couple of lags and then falls off, and the hours→maintenance cross‑correlation peaks at 0–1 months. That is why the same‑month VARX nowcast works and why the next 1–4 months keep their shape before phase drift takes over.
 
-## The Lear 60 story
+## The Small-cabin Business Jet story
 
-The Lear 60 is steady until it isn’t. After logging, maintenance sits on a routine baseline and then throws spikes that are clearly event‑driven. Hours are choppy, with little persistence and no durable seasonal pattern, so most usable guidance is limited to the short run.
+The small-cabin jet realization is steady and stationary until it isn’t. After logging, maintenance sits on a routine baseline and then throws spikes that are clearly event‑driven. Hours are choppy, with little persistence and no durable seasonal pattern, so most usable guidance is limited to the short run.
 
 Practical translation: keep tight parts buffers, shorter staffing bands, and plan tactically for one‑off work. Use the model for calls of 1–3 months and avoid over-promising anything beyond that.
 
-What the charts show: decomposition yields a flat trend line with small seasonal fingerprints that do not survive diagnostics. The hours ACF fades quickly, the maintenance residuals appear close to white, and the hours→maintenance cross-correlation peaks at 0–1 months and then declines. Same‑month VARX adds a bit when $H_t$ (the realized flight hours in the current month) is known; for $h>1$ the models lean toward baseline behavior fast, intervals widen, and any “cycle” you think you see is wishful thinking. This is why Lear 60 remains a 1–3 month tactical instrument, and beyond that, it becomes event-driven.
+What the charts show: decomposition yields a flat trend line with small seasonal fingerprints that do not survive diagnostics. The hours ACF fades quickly, the maintenance residuals appear close to white, and the hours→maintenance cross-correlation peaks at 0–1 months and then declines. Same‑month VARX adds a bit when $H_t$ (the realized flight hours in the current month) is known; for $h>1$ the models lean toward baseline behavior fast, intervals widen, and any “cycle” you think you see is wishful thinking. This is why small-cabin jet remains a 1–3 month tactical instrument, and beyond that, it becomes event-driven.
 
 ## Methods in plain words
 
@@ -66,7 +66,7 @@ The usual guardrails apply: checking residuals for whiteness, unpacking the ACF/
 
 ## Validation
 
-To validate the analysis, I performed a rolling origin backtest over a six-month window. Both aircraft confirm the short‑horizon picture: the Global's sweet spot is h = 1–4, while the Lear holds value mainly at h = 1–3 before fading toward noise.
+To validate the analysis, I performed a rolling origin backtest over a six-month window. Both aircraft confirm the short‑horizon picture: the large-cabin jet's sweet spot is h = 1–4, while the small-cabin jet holds value mainly at h = 1–3 before fading toward noise.
 
 **Considerations:**
 
@@ -81,14 +81,14 @@ To validate the analysis, I performed a rolling origin backtest over a six-month
 The results are intended for near-term budgeting and scheduling. They could also inform detailed operational tasks such as parts ordering or shop assignments, but those fall outside the scope of this particular analysis. The short‑memory structure gives guidance on how to frame expectations rather than dictating exact actions.
 
 - **Budgets**: set cost ranges that reflect the short‑horizon signal and avoid false precision beyond a quarter.
-- **Staffing**: adjust labor expectations to the 2–3 month rhythm where it shows up (GLEX) and keep them shorter and tactical where it does not (Lear 60).
-- **Scheduling**: align higher‑load periods with the GLEX quarterly pulse and leave contingency room for Lear 60’s one‑off spikes.
+- **Staffing**: adjust labor expectations to the 2–3 month rhythm where it shows up (large-cabin) and keep them shorter and tactical where it does not (small-cabin).
+- **Scheduling**: align higher‑load periods with the large-cabin quarterly pulse and leave contingency room for the small-cabin jet’s one‑off spikes.
 
 The models do not replace operational expertise. However, they provide a consistent way to describe near-term expectations that complements how these aircraft already behave.
 
 ## Risks, limits, and redaction
 
-Regime shifts and vendor changes rewrite the script. Reporting lag can smear month boundaries. Redaction hides magnitudes, so small effects may look even smaller on the page. Lear’s early span is shorter than GLEX, so any longer cycle would require more history to confirm. Looking ahead, a natural extension would be to bring Chartered Hours into the analysis. That addition could sharpen scheduling forecasts by linking office aircraft use with charter operations. That is the lay of the land, not an apology for modeling.
+Regime shifts and vendor changes rewrite the script. Reporting lag can smear month boundaries. Redaction hides magnitudes, so small effects may look even smaller on the page. The small-cabin jet’s early span is shorter than the large-cabin's, so any longer cycle would require more history to confirm. Looking ahead, a natural extension would be to bring Chartered Hours into the analysis. That addition could sharpen scheduling forecasts by linking office aircraft use with charter operations. That is the lay of the land, not an apology for modeling.
 
 ## Want the friendly read or the code
 
