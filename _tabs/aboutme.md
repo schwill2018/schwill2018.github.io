@@ -20,6 +20,11 @@ Data Scientist and Statistician based in Dallas, Texas, specializing in predicti
 - GitHub, Anaconda, Jupyter, RStudio, Google Cloud
 
 **Notable Projects**
+
+- **Aircraft Fleet Time-Series Analysis**: Built ARIMA/VAR models to forecast flight hours and cycles, planned maintenance windows, and modeled portfolio utilization for business-jet assets. Produced a Quarto/HTML report and planning artifacts.
+  - [Technical Article](https://schwill2018.github.io/posts/aircraft-ts-report/)
+  - [Visualizations, Analysis, & Forecasting](https://schwill2018.github.io/files/2025-09-16-aircraft-ts-report.html)
+  - [Repository](https://github.com/schwill2018/aircraft-ts-analysis).
 - **NHL Forecasting & Betting Model**: Developed advanced predictive models for NHL player scoring and game outcomes, using engineered features (travel distance, timezone effects, fatigue metrics) and validated with rolling-origin cross-validation.
 - **Pain & Hypermobility Study**: Statistical consulting and reproducible analytics (R Shiny), uncovering links between pain and hypermobility in clinical data.
 - **Financial & Asset Management Analytics**: Automated financial workflows with Regex and OCR, developed AI-driven invoice classification, improving cost efficiency across asset portfolios.
