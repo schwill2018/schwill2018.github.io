@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: page
 title: "Taxi Cancellations: A Predictive Model Analysis"
 permalink: /projects/taxi-cancellations/
 summary: "Developed an ensemble machine learning framework in R to predict taxi ride cancellations, addressing class imbalance through SMOTE and prioritizing specificity for actionable business impact."

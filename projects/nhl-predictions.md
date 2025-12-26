@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: page
 title: "Using Data Science to Predict NHL Outcomes"
 permalink: /projects/nhl-predictions/
 summary: "Developed, evaluated, and deployed machine learning models (GLM, Random Forest, XGBoost, Neural Network, and ensemble) for forecasting NHL game outcomes using bookmaker and in-game features."
