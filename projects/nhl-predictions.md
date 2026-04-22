@@ -46,9 +46,9 @@ This project focuses on building and comparing multiple machine learning models 
 ![Model ROCAUC Performance](/assets/images/all_models_performance.png)
 ![Bookmaker Commission Distribution](/assets/images/vigacrossgames_overlaid.jpeg)
 
-## GitHub Repository & Further Reading
+## Application & Further Reading
 
-- [**Full code and detailed results**](https://github.com/schwill2018/hockeypreds)
+- [**NHL Predictions App**](https://schneiderstats.shinyapps.io/nhl-model-dashboard/)
 - [**NHL Predictions Project – Analysis and Commentary**](/nhl_predictions_blog.html)
 
 ## Conclusion & Next Steps
