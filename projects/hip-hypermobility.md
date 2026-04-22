@@ -3,6 +3,7 @@ layout: page
 title: "Statistical Analysis of Hip Hypermobility and Psychosocial Outcomes"
 permalink: /projects/hip-hypermobility/
 summary: "Applied linear and logistic regression with multiple imputation to clinical data, assessing the relationship between hip hypermobility and psychosocial variables in 445 patients. Results published with an interactive Shiny dashboard."
+description: "Clinical analytics project using regression and multiple imputation to study hip hypermobility and psychosocial outcomes in a hospital cohort."
 date: 2024-12-18
 categories: [Statistical Modeling, Clinical Analytics]
 tags: [Hypermobility, Psychosocial Outcomes, Regression, Multiple Imputation, Shiny App, Healthcare Analytics]

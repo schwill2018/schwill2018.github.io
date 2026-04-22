@@ -3,6 +3,7 @@ layout: page
 title: "Hybrid Recommendation Engine for Optimal Neighborhood Selection"
 permalink: /projects/data-science-capstone/
 summary: "Developed a hybrid machine learning recommendation system that combines K-Means clustering and KNN to deliver personalized neighborhood rankings using public and proprietary housing, safety, and amenity data."
+description: "Hybrid recommendation engine project combining K-Means clustering and KNN to rank neighborhoods using housing, safety, and amenity data."
 date: 2020-09-18
 categories: [Recommendation Systems, Machine Learning, Capstone]
 tags: [K-Means, KNN, Clustering, Personalization, Python, Data Science Capstone]

@@ -3,6 +3,7 @@ layout: page
 title: "Wide and Deep Learning: Custom Multi-Layer Perceptron from Scratch"
 permalink: /projects/wide-and-deep-learning/
 summary: "Engineered a multi-layer perceptron (MLP) from scratch in Python using object-oriented programming, demonstrating foundational and advanced deep learning concepts, interpretability, and extensibility without reliance on high-level libraries."
+description: "Deep learning project building a custom multi-layer perceptron in Python from scratch for transparency, interpretability, and hands-on model understanding."
 date: 2024-07-01
 categories: [Deep Learning, Neural Networks, Python]
 tags: [Multi-Layer Perceptron, Neural Networks, Python, OOP, Keras, TensorFlow, Custom Implementation]

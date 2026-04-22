@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+description: "About Will Schneider, a data scientist and statistician focused on predictive analytics, machine learning, forecasting, and business-facing decision support."
 icon: fas fa-user
 order: 4
 ---

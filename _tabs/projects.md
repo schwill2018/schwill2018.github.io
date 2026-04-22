@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+description: "Selected data science and analytics projects by Will Schneider, including forecasting, machine learning, clinical modeling, and recommendation systems."
 icon: fas fa-briefcase
 order: 2
 ---
