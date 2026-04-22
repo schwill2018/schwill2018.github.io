@@ -38,4 +38,4 @@ Data Scientist and Statistician based in Dallas, Texas, specializing in predicti
 - [GitHub](https://github.com/schwill2018)
 - [Email](mailto:will@brookwaterlabs.com)
 
-See the [Projects](/projects/) tab for detailed examples or visit the [Blog](/blog/) for technical write-ups.
+See the [Projects](/projects/) tab for detailed examples or visit the [Blog](/posts/) for technical write-ups.
