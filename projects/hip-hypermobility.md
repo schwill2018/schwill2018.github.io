@@ -23,10 +23,10 @@ This project investigates whether psychosocial factors such as pain catastrophiz
 - **Data**: 445 patients from a Baylor Scott & White hip clinic with Beighton Score, age, gender, and three psychosocial surveys (PCS, PROMIS-PI, PSEQ)
 - **Outcome:** Beighton Score (continuous; dichotomized for logistic regression)
 - **Predictors:** Age, gender, pain catastrophizing (PCS), pain interference (PROMIS-PI), pain self-efficacy (PSEQ)
-- **Handling Missing Data**: Used Multiple Imputation by Chained Equations (MICE) to address 47–64% missingness in psychosocial variables
+- **Handling Missing Data**: Used Multiple Imputation by Chained Equations (MICE) to address 47-64% missingness in psychosocial variables
 - **Statistical Analysis**:
     - Multiple Linear Regression (MLR) for continuous Beighton Score
-    - Post-hoc Logistic Regression for dichotomized outcome (≥4 vs <4)
+    - Post-hoc Logistic Regression for dichotomized outcome (>=4 vs <4)
     - Age and gender included as covariates; all models checked for multicollinearity and validated via diagnostic plots
 
 ## Key Results
@@ -53,7 +53,7 @@ Explore all results and rerun analyses with new data:
 
 ## Further Reading
 
-- [**Blog Post: Exploring the Relationship Between Hip Hypermobility and Psychosocial Outcomes**](/hypermobility_blog.html)
+- [**Full Analysis & Commentary (HTML)**](/files/2024-12-18-hip-hypermobility-analysis.html)
 
 ## Conclusion & Next Steps
 

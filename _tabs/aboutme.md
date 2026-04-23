@@ -27,8 +27,8 @@ Data Scientist and Statistician based in Dallas, Texas, specializing in predicti
   - [Visualizations, Analysis, & Forecasting](https://schwill2018.github.io/files/2025-09-16-aircraft-ts-report.html)
   - [Repository](https://github.com/schwill2018/aircraft-ts-analysis).
 - **NHL Forecasting & Betting Model**: Developed advanced predictive models for NHL player scoring and game outcomes, using engineered features (travel distance, timezone effects, fatigue metrics) and validated with rolling-origin cross-validation.
-  - [Technical Article](https://schwill2018.github.io/posts/nhl-predictions/)
   - [Summary, Visualizations, & Analysis](https://schwill2018.github.io/projects/nhl-predictions/)
+  - [Full Analysis & Commentary](https://schwill2018.github.io/files/2025-08-03-nhl-predictions.html)
   - [NHL Predictions App](https://schneiderstats.shinyapps.io/nhl-model-dashboard/)
 - **Pain & Hypermobility Study**: Statistical consulting and reproducible analytics (R Shiny), uncovering links between pain and hypermobility in clinical data.
 - **Financial & Asset Management Analytics**: Automated financial workflows with Regex and OCR, developed AI-driven invoice classification, improving cost efficiency across asset portfolios.
