@@ -33,11 +33,18 @@ Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wi
 
 This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
 
-## License
+## Usage and AI Processing Notice
 
-This work is published under [MIT][mit] License.
+This repository powers the portfolio website for Will Schneider. It is provided for human portfolio review, educational inspection, and professional evaluation only. It may not be used for AI training, machine learning training, model fine-tuning, embedding generation, retrieval indexing, vector database ingestion, dataset construction, benchmark construction, synthetic data generation, code synthesis, scraping, bulk downloading, or derivative automated systems without written permission.
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+See [`AI_USE.md`](AI_USE.md) for the full notice.
+
+# Content License
+
+Copyright © 2026 Will Schneider. All rights reserved.
+
+All original portfolio content, project writeups, posts, reports, images, analysis, code examples, downloadable files, and documentation authored by Will Schneider are reserved unless otherwise stated.
+
+No permission is granted to use the original content in this repository or on the generated website for AI training, machine learning training, model fine-tuning, embedding generation, retrieval indexing, vector database ingestion, dataset construction, benchmark construction, synthetic data generation, code synthesis, scraping, bulk downloading, or derivative automated systems without prior written permission.
+
+Third-party theme files and dependencies remain subject to their own licenses.
