@@ -1,8 +1,9 @@
 ---
-layout: single
+layout: page
 title: "Using Data Science to Predict NHL Outcomes"
 permalink: /projects/nhl-predictions/
 summary: "Developed, evaluated, and deployed machine learning models (GLM, Random Forest, XGBoost, Neural Network, and ensemble) for forecasting NHL game outcomes using bookmaker and in-game features."
+description: "Sports analytics project using machine learning and ensemble modeling to predict NHL game outcomes from bookmaker and game-level features."
 date: 2025-08-03
 categories: [Sports Analytics, Machine Learning, Predictive Modeling]
 tags: [NHL, Game Prediction, Ensemble Learning, GLM, Random Forest, XGBoost, Neural Network, Sports Betting]
@@ -46,12 +47,12 @@ This project focuses on building and comparing multiple machine learning models 
 ![Model ROCAUC Performance](/assets/images/all_models_performance.png)
 ![Bookmaker Commission Distribution](/assets/images/vigacrossgames_overlaid.jpeg)
 
-## GitHub Repository & Further Reading
+## Application & Further Reading
 
-- [Full code and detailed results](https://github.com/schwill2018/hockeypreds)
-- [NHL Predictions Project – Analysis and Commentary](/nhl_predictions_blog.html)
+- [**NHL Predictions App**](https://schneiderstats.shinyapps.io/nhl-model-dashboard/)
+- [**Full Analysis & Commentary (HTML)**](/files/2025-08-03-nhl-predictions.html)
 
 ## Conclusion & Next Steps
 
-- Model provided actionable signals for sports betting and identified bookmakers’ inefficiencies.
+- Model provided actionable signals for sports betting and identified bookmakers' inefficiencies.
 - Future work: Expand to live/in-play predictions, automate data ingestion, and refine ensemble meta-learning for additional sports and markets.
