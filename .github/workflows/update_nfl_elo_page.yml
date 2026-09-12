@@ -87,7 +87,7 @@ jobs:
 
           # Display-only formatting: underlying CSVs and calculations are unchanged.
           def elo_display(value):
-              return f"{float(value):.0f}.00"
+            return f"{float(value):.2f}"
 
           as_of_date = clean(rows[0].get("as_of_date")) or "latest available update"
           lines = [
