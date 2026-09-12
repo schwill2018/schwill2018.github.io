@@ -78,7 +78,7 @@ jobs:
               "icon: fas fa-football-ball",
               "order: 7",
               "categories: [sports]",
-              "tags: ["Elo dashboard", "forecasting", "football"]",
+              "tags: [ELO, forecasting, football]",
               "---",
               "",
               f"Current NFL Elo rankings as of **{as_of_date}**.",
