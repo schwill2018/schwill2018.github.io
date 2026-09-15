@@ -1,0 +1,14 @@
+---
+layout: post
+---
+{% if page.redirect_url or page.external_url %}
+  {% if page.redirect_url %}
+    {% assign redirect_target = page.redirect_url | relative_url %}
+  {% else %}
+    {% assign redirect_target = page.external_url %}
+  {% endif %}
+  <script>location.href = "{{ redirect_target }}";</script>
+  <p><a href="{{ redirect_target }}">Continue</a></p>
+{% else %}
+  {{ content }}
+{% endif %}

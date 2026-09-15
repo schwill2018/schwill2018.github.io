@@ -1,0 +1,152 @@
+name: Update NFL Elo Page
+
+on:
+  # Run after the NFL Elo repository's daily update.
+  schedule:
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-nfl-elo-page
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the published portfolio branch
+        uses: actions/checkout@v7
+        with:
+          ref: schwill2018-patch-chirpy
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Build the NFL Elo rankings and weekly predictions page
+        env:
+          NFL_RANKINGS_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/current_elo_rankings.csv
+          NFL_WEEKLY_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/weekly_projections.csv
+        run: |
+          python - <<'PY'
+          import csv
+          import io
+          import os
+          import urllib.request
+          from pathlib import Path
+
+          division_map = {
+              "BUF": "AFC East", "MIA": "AFC East", "NE": "AFC East", "NYJ": "AFC East",
+              "BAL": "AFC North", "CIN": "AFC North", "CLE": "AFC North", "PIT": "AFC North",
+              "HOU": "AFC South", "IND": "AFC South", "JAX": "AFC South", "TEN": "AFC South",
+              "DEN": "AFC West", "KC": "AFC West", "LV": "AFC West", "LAC": "AFC West",
+              "DAL": "NFC East", "NYG": "NFC East", "PHI": "NFC East", "WAS": "NFC East",
+              "CHI": "NFC North", "DET": "NFC North", "GB": "NFC North", "MIN": "NFC North",
+              "ATL": "NFC South", "CAR": "NFC South", "NO": "NFC South", "TB": "NFC South",
+              "ARI": "NFC West", "LA": "NFC West", "SF": "NFC West", "SEA": "NFC West",
+          }
+
+          with urllib.request.urlopen(os.environ["NFL_RANKINGS_URL"], timeout=30) as response:
+              text = response.read().decode("utf-8-sig")
+
+          rows = list(csv.DictReader(io.StringIO(text)))
+          if not rows:
+              raise SystemExit("The NFL rankings CSV was empty.")
+
+          required = {"rank", "team", "elo"}
+          missing = required - set(rows[0])
+          if missing:
+              raise SystemExit(f"The NFL rankings CSV is missing columns: {sorted(missing)}")
+
+          rows.sort(key=lambda row: int(float(row["rank"])))
+
+          with urllib.request.urlopen(os.environ["NFL_WEEKLY_URL"], timeout=30) as response:
+              weekly_text = response.read().decode("utf-8-sig")
+
+          weekly_reader = csv.DictReader(io.StringIO(weekly_text))
+          weekly_required = {
+              "as_of_date", "week", "gameday", "away_team", "home_team",
+              "away_elo", "home_elo", "p_away", "p_home",
+          }
+          weekly_missing = weekly_required - set(weekly_reader.fieldnames or [])
+          if weekly_missing:
+              raise SystemExit(f"The weekly projections CSV is missing columns: {sorted(weekly_missing)}")
+
+          weekly_rows = list(weekly_reader)
+          weekly_rows.sort(key=lambda row: (row["gameday"], row.get("gametime", "")))
+
+          def clean(value):
+              return str(value or "").replace("|", "\\|").replace("\n", " ").strip()
+
+          # Display-only formatting: underlying CSVs and calculations are unchanged.
+          def elo_display(value):
+            return f"{float(value):.2f}"
+
+          as_of_date = clean(rows[0].get("as_of_date")) or "latest available update"
+          lines = [
+              "---",
+              "layout: page",
+              "title: NFL Elo",
+              "icon: fas fa-football-ball",
+              "order: 7",
+              "categories: [sports]",
+              "tags: [ELO, forecasting, football]",
+              "---",
+              "",
+              f"Current NFL Elo rankings as of **{as_of_date}**.",
+              "",
+              "| Rank | Team | Elo | Conference | Division |",
+              "| ---: | --- | ---: | --- | --- |",
+          ]
+
+          for row in rows:
+              team = clean(row["team"])
+              division = clean(row.get("division")) or division_map.get(team, "")
+              conference = clean(row.get("conference")) or division[:3]
+              lines.append(
+                  f"| {clean(row['rank'])} | {team} | {elo_display(row['elo'])} | "
+                  f"{conference} | {division} |"
+              )
+
+          lines.extend(["", "## Weekly Predictions", ""])
+          if weekly_rows:
+              week = clean(weekly_rows[0]["week"])
+              weekly_date = clean(weekly_rows[0]["as_of_date"])
+              lines.extend([
+                  f"NFL Week {week}: remaining games, forecasts as of **{weekly_date}**.",
+                  "",
+                  "| Date | Away | Home | Away Elo | Home Elo | Away win probability | Home win probability |",
+                  "| --- | --- | --- | ---: | ---: | ---: | ---: |",
+              ])
+              for row in weekly_rows:
+                  lines.append(
+                      f"| {clean(row['gameday'])} | {clean(row['away_team'])} | "
+                      f"{clean(row['home_team'])} | {elo_display(row['away_elo'])} | "
+                      f"{elo_display(row['home_elo'])} | "
+                      f"{float(row['p_away']):.1%} | {float(row['p_home']):.1%} |"
+                  )
+          else:
+              lines.append("No weekly projections are currently available.")
+
+          Path("_tabs").mkdir(exist_ok=True)
+          Path("_tabs/nfl-elo.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+
+      - name: Commit the updated page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _tabs/nfl-elo.md
+          if git diff --cached --quiet; then
+            echo "No NFL Elo page changes to save."
+            exit 0
+          fi
+          git commit -m "Update NFL Elo rankings and weekly predictions page"
+          git push origin HEAD:schwill2018-patch-chirpy

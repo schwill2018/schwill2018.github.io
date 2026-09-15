@@ -3045,15 +3045,18 @@ vertical-align: -.125em;
 </header>
 
 <section id="backdrop" class="level2">
+<h2>
+  <a href="https://schneiderstats.shinyapps.io/nhl-model-dashboard/">DASHBOARD</a>
+</h2>
 <h2 class="anchored" data-anchor-id="backdrop">Backdrop</h2>
-<p>Growing up watching Dallas Stars games with my father nurtured a deep appreciation for hockey. That curiosity later morphed into a data‑science project: could I build a model that predicts NHL outcomes? During graduate school I attempted an ambitious player‑performance model, but the inherent randomness of hockey made it difficult to achieve the accuracy I wanted. Unlike high‑scoring sports such as basketball, hockey outcomes hinge on a handful of events; luck can account for roughly 53% of a team’s record, whereas it contributes only 12% to NBA standings <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The NHL also imposes a hard salary cap, a mechanism introduced after the 2004–05 lockout that prevents wealthy clubs from buying talent and promotes parity <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. These features make the league both exciting and hard to forecast.</p>
+<p>During graduate school I attempted an ambitious player‑performance model, but the inherent randomness of hockey made it difficult to achieve the accuracy I wanted. Unlike high‑scoring sports such as basketball, hockey outcomes hinge on a handful of events; luck can account for roughly 53% of a team’s record, whereas it contributes only 12% to NBA standings <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The NHL also imposes a hard salary cap, a mechanism introduced after the 2004–05 lockout that prevents wealthy clubs from buying talent and promotes parity <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. These features make the league exciting but hard to forecast.</p>
 <p>What you’ll learn in this post:</p>
 <ul>
 <li><strong>How to build and evaluate a prospective sports‑prediction model.</strong> We walk through data collection, feature engineering, model training and prospective cross‑validation, illustrating the pitfalls of time‑series prediction.</li>
 <li><strong>Practical feature engineering for real‑world sports data.</strong> Lagged rolling averages, travel‑distance metrics and aggregated player statistics provide the building blocks for our models.</li>
-<li><strong>Why bookmaker odds are hard to beat.</strong> We examine expected value, vig and market structure to explain why most bets have near‑zero EV and why selective filters are essential.</li>
+<li><strong>Why bookmaker odds are hard to beat.</strong> We'll examine expected value, vig and market structure to explain why most bets have near‑zero EV and why selective filters are essential.</li>
 <li><strong>How calibration and stacking improve forecasts.</strong> Beta calibration and a stacked meta‑model improve probability estimates and discrimination.</li>
-<li><strong>Lessons for would‑be sports bettors or modelers.</strong> We synthesize what worked, what didn’t and how to find a usable edge in an unpredictable sport.</li>
+<li><strong>Lessons for would‑be sports bettors or modelers.</strong> We'll synthesize what worked, what didn’t and how to find a usable edge in an unpredictable sport.</li>
 </ul>
 </section>
 <section id="the-first-run-player-point-prediction" class="level2">
