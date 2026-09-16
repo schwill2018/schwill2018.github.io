@@ -46,7 +46,7 @@ Current NFL Elo rankings as of **latest available update**.
 
 ## Weekly Predictions
 
-NFL Week 2: remaining games, forecasts as of **2026-09-15**.
+NFL Week 2: remaining games, forecasts as of **2026-09-16**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away win probability | Home win probability |
 | --- | --- | --- | ---: | ---: | ---: | ---: |
