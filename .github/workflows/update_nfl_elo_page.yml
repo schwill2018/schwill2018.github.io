@@ -2,6 +2,7 @@ name: Update NFL Elo Page
 
 on:
   # Run after the NFL Elo repository's daily update.
+  # Daily at 09:00 UTC: 4:00 a.m. Dallas daylight time / 3:00 a.m. standard time.
   schedule:
     - cron: "0 9 * * *"
   workflow_dispatch:
