@@ -3,7 +3,7 @@ name: Update NFL Elo Page
 on:
   # Run after the NFL Elo repository's daily update.
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 permissions:
