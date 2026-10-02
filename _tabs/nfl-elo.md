@@ -26,16 +26,16 @@ Current NFL Elo rankings as of **latest available update**.
 | 13 | PHI | 1035.01 | NFC | NFC East |
 | 14 | HOU | 1024.54 | AFC | AFC South |
 | 15 | CIN | 1021.45 | AFC | AFC North |
-| 16 | PIT | 1019.74 | AFC | AFC North |
+| 16 | PIT | 1001.96 | AFC | AFC North |
 | 17 | ATL | 960.25 | NFC | NFC South |
-| 18 | LV | 957.10 | AFC | AFC West |
-| 19 | GB | 952.37 | NFC | NFC North |
-| 20 | DAL | 948.11 | NFC | NFC East |
-| 21 | NYG | 947.49 | NFC | NFC East |
-| 22 | IND | 946.67 | AFC | AFC South |
-| 23 | NO | 944.47 | NFC | NFC South |
-| 24 | WAS | 943.47 | NFC | NFC East |
-| 25 | CLE | 942.45 | AFC | AFC North |
+| 18 | CLE | 960.23 | AFC | AFC North |
+| 19 | LV | 957.10 | AFC | AFC West |
+| 20 | GB | 952.37 | NFC | NFC North |
+| 21 | DAL | 948.11 | NFC | NFC East |
+| 22 | NYG | 947.49 | NFC | NFC East |
+| 23 | IND | 946.67 | AFC | AFC South |
+| 24 | NO | 944.47 | NFC | NFC South |
+| 25 | WAS | 943.47 | NFC | NFC East |
 | 26 | CAR | 935.72 | NFC | NFC South |
 | 27 | LAC | 926.80 | AFC | AFC West |
 | 28 | TB | 916.98 | NFC | NFC South |
@@ -50,7 +50,7 @@ NFL Week 4: forecasts as of **2026-10-01**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | --- |
-| 2026-10-01 | PIT | CLE | 1019.74 | 942.45 | 56.6% | 43.4% | TBD |
+| 2026-10-01 | PIT | CLE | 1019.74 | 942.45 | 56.6% | 43.4% | CLE |
 | 2026-10-04 | IND | WAS | 946.67 | 943.47 | 50.5% | 49.5% | TBD |
 | 2026-10-04 | ARI | NYG | 913.59 | 947.49 | 40.8% | 59.2% | TBD |
 | 2026-10-04 | DAL | HOU | 948.11 | 1024.54 | 35.0% | 65.0% | TBD |
