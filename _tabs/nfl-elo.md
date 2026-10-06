@@ -27,17 +27,17 @@ Current NFL Elo rankings as of **latest available update**.
 | 14 | CIN | 1005.05 | AFC | AFC North |
 | 15 | PIT | 1001.96 | AFC | AFC North |
 | 16 | HOU | 1000.16 | AFC | AFC South |
-| 17 | IND | 978.37 | AFC | AFC South |
-| 18 | DAL | 972.49 | NFC | NFC East |
-| 19 | NYG | 970.02 | NFC | NFC East |
-| 20 | GB | 967.52 | NFC | NFC North |
-| 21 | CAR | 962.53 | NFC | NFC South |
-| 22 | ATL | 960.25 | NFC | NFC South |
+| 17 | ATL | 996.27 | NFC | NFC South |
+| 18 | IND | 978.37 | AFC | AFC South |
+| 19 | DAL | 972.49 | NFC | NFC East |
+| 20 | NYG | 970.02 | NFC | NFC East |
+| 21 | GB | 967.52 | NFC | NFC North |
+| 22 | CAR | 962.53 | NFC | NFC South |
 | 23 | CLE | 960.23 | AFC | AFC North |
 | 24 | LV | 944.56 | AFC | AFC West |
-| 25 | NO | 944.47 | NFC | NFC South |
-| 26 | LAC | 920.16 | AFC | AFC West |
-| 27 | WAS | 911.76 | NFC | NFC East |
+| 25 | LAC | 920.16 | AFC | AFC West |
+| 26 | WAS | 911.76 | NFC | NFC East |
+| 27 | NO | 908.45 | NFC | NFC South |
 | 28 | TB | 901.83 | NFC | NFC South |
 | 29 | ARI | 891.07 | NFC | NFC West |
 | 30 | MIA | 870.88 | AFC | AFC East |
@@ -46,26 +46,25 @@ Current NFL Elo rankings as of **latest available update**.
 
 ## Weekly Predictions
 
-NFL Week 4: forecasts as of **2026-10-01**.
+NFL Week 5: forecasts as of **2026-10-06**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | --- |
-| 2026-10-01 | PIT | CLE | 1019.74 | 942.45 | 56.6% | 43.4% | CLE |
-| 2026-10-04 | IND | WAS | 946.67 | 943.47 | 50.5% | 49.5% | IND |
-| 2026-10-04 | ARI | NYG | 913.59 | 947.49 | 40.8% | 59.2% | NYG |
-| 2026-10-04 | DAL | HOU | 948.11 | 1024.54 | 35.0% | 65.0% | DAL |
-| 2026-10-04 | GB | TB | 952.37 | 916.98 | 50.6% | 49.4% | GB |
-| 2026-10-04 | JAX | CIN | 1106.40 | 1021.45 | 57.7% | 42.3% | JAX |
-| 2026-10-04 | LA | PHI | 1069.69 | 1035.01 | 50.5% | 49.5% | LA |
-| 2026-10-04 | NE | BUF | 1075.58 | 1152.28 | 35.0% | 65.0% | NE |
-| 2026-10-04 | NYJ | CHI | 875.48 | 1070.05 | 21.4% | 78.6% | CHI |
-| 2026-10-04 | TEN | BAL | 807.56 | 1042.22 | 17.8% | 82.2% | BAL |
-| 2026-10-04 | MIA | MIN | 877.12 | 1114.21 | 17.6% | 82.4% | MIN |
-| 2026-10-04 | DEN | SF | 1099.55 | 1116.78 | 43.1% | 56.9% | SF |
-| 2026-10-04 | KC | LV | 1045.29 | 957.10 | 58.2% | 41.8% | KC |
-| 2026-10-04 | LAC | SEA | 926.80 | 1180.40 | 16.3% | 83.7% | SEA |
-| 2026-10-04 | DET | CAR | 1038.01 | 935.72 | 60.1% | 39.9% | CAR |
-| 2026-10-05 | ATL | NO | 960.25 | 944.47 | 47.8% | 52.2% | TBD |
+| 2026-10-08 | TB | DAL | 901.83 | 972.49 | 35.8% | 64.2% | TBD |
+| 2026-10-11 | PHI | JAX | 1017.38 | 1122.80 | 31.3% | 68.7% | TBD |
+| 2026-10-11 | CHI | GB | 1080.77 | 967.52 | 61.6% | 38.4% | TBD |
+| 2026-10-11 | CIN | MIA | 1005.05 | 870.88 | 64.4% | 35.6% | TBD |
+| 2026-10-11 | CLE | NYJ | 960.23 | 864.76 | 59.2% | 40.8% | TBD |
+| 2026-10-11 | HOU | TEN | 1000.16 | 800.71 | 72.5% | 27.5% | TBD |
+| 2026-10-11 | IND | PIT | 978.37 | 1001.96 | 42.2% | 57.8% | TBD |
+| 2026-10-11 | LV | NE | 944.56 | 1096.59 | 25.9% | 74.1% | TBD |
+| 2026-10-11 | MIN | NO | 1120.44 | 908.45 | 73.9% | 26.1% | TBD |
+| 2026-10-11 | NYG | WAS | 970.02 | 911.76 | 53.9% | 46.1% | TBD |
+| 2026-10-11 | DEN | LAC | 1077.12 | 920.16 | 67.4% | 32.6% | TBD |
+| 2026-10-11 | DET | ARI | 1011.20 | 891.07 | 62.6% | 37.4% | TBD |
+| 2026-10-11 | SF | SEA | 1139.21 | 1187.05 | 38.8% | 61.2% | TBD |
+| 2026-10-11 | BAL | ATL | 1049.08 | 996.27 | 53.1% | 46.9% | TBD |
+| 2026-10-12 | BUF | LA | 1131.27 | 1087.32 | 51.9% | 48.1% | TBD |
 
 [View model performance]({% link _tabs/nfl-elo-performance.md %})
 
