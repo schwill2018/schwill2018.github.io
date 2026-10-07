@@ -46,7 +46,7 @@ Current NFL Elo rankings as of **latest available update**.
 
 ## Weekly Predictions
 
-NFL Week 5: forecasts as of **2026-10-06**.
+NFL Week 5: forecasts as of **2026-10-07**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | --- |
