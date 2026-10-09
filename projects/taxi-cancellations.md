@@ -1,8 +1,9 @@
 ---
-layout: single
+layout: page
 title: "Taxi Cancellations: A Predictive Model Analysis"
 permalink: /projects/taxi-cancellations/
 summary: "Developed an ensemble machine learning framework in R to predict taxi ride cancellations, addressing class imbalance through SMOTE and prioritizing specificity for actionable business impact."
+description: "Predictive modeling project in R using ensemble methods and SMOTE to forecast taxi ride cancellations and improve operational decision-making."
 date: 2024-04-01
 categories: [Predictive Modeling, Machine Learning, Operations Analytics]
 tags: [Taxi Cancellations, SMOTE, Specificity, Ensemble Modeling, R, Random Forest, KNN, AdaBoost]
@@ -55,7 +56,7 @@ This project aimed to optimize taxi service reliability and operational efficien
 
 ## GitHub Repository & Additional Resources
 
-- [GitHub: Taxi Cancellations Predictive Analysis](https://github.com/schwill2018/Taxi-Cancellations---A-Predictive-Model-Analysis/tree/main)
+- [**GitHub: Taxi Cancellations Predictive Analysis**](https://github.com/schwill2018/Taxi-Cancellations---A-Predictive-Model-Analysis/tree/main)
 
 ## Conclusion & Business Implications
 
