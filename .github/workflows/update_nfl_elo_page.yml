@@ -2,9 +2,8 @@ name: Update NFL Elo Page
 
 on:
   # Run after the NFL Elo repository's daily update.
-  # Daily at 09:00 UTC: 4:00 a.m. Dallas daylight time / 3:00 a.m. standard time.
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "17 13 * * *"
   workflow_dispatch:
 
 permissions:
@@ -120,6 +119,12 @@ jobs:
           def elo_display(value):
             return f"{float(value):.2f}"
 
+          def spread_display(value):
+              if value is None or not str(value).strip():
+                  return ""
+              spread = float(value)
+              return "0.0" if spread == 0 else f"{spread:+.1f}"
+
           as_of_date = clean(rows[0].get("as_of_date")) or "latest available update"
           lines = [
               "---",
@@ -153,8 +158,8 @@ jobs:
               lines.extend([
                   f"NFL Week {week}: forecasts as of **{weekly_date}**.",
                   "",
-                  "| Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Outcome |",
-                  "| --- | --- | --- | ---: | ---: | ---: | ---: | --- |",
+                  "| Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Outcome |",
+                  "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
               ])
               for row in weekly_rows:
                   lines.append(
@@ -162,8 +167,10 @@ jobs:
                       f"{clean(row['home_team'])} | {elo_display(row['away_elo'])} | "
                       f"{elo_display(row['home_elo'])} | "
                       f"{float(row['p_away']):.1%} | {float(row['p_home']):.1%} | "
+                      f"{spread_display(row.get('model_home_spread'))} | "
                       f"{clean(row['outcome'])} |"
                   )
+              lines.extend(["", "Negative Home Spread favors the home team; positive favors the away team."])
           else:
               lines.append("No weekly projections are currently available.")
 
