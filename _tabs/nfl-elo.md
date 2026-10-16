@@ -11,13 +11,13 @@ Current NFL Elo rankings as of **latest available update**.
 
 | Rank | Team | Elo | Conference | Division |
 | ---: | --- | ---: | --- | --- |
-| 1 | SEA | 1138.25 | NFC | NFC West |
-| 2 | SF | 1138.02 | NFC | NFC West |
+| 1 | SF | 1138.02 | NFC | NFC West |
+| 2 | SEA | 1129.86 | NFC | NFC West |
 | 3 | BUF | 1119.80 | AFC | AFC East |
 | 4 | MIN | 1119.09 | NFC | NFC North |
 | 5 | JAX | 1109.96 | AFC | AFC South |
 | 6 | NE | 1093.95 | AFC | AFC East |
-| 7 | DEN | 1075.79 | AFC | AFC West |
+| 7 | DEN | 1084.19 | AFC | AFC West |
 | 8 | LA | 1066.36 | NFC | NFC West |
 | 9 | KC | 1061.47 | AFC | AFC West |
 | 10 | BAL | 1056.70 | AFC | AFC North |
@@ -50,7 +50,7 @@ NFL Week 6: forecasts as of **2026-10-15**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| 2026-10-15 | SEA | DEN | 1138.25 | 1075.79 | 54.8% | 45.2% | +1.5 | TBD |
+| 2026-10-15 | SEA | DEN | 1138.25 | 1075.79 | 54.8% | 45.2% | +1.5 | DEN |
 | 2026-10-18 | HOU | JAX | 1011.60 | 1109.96 | 36.2% | 63.8% | -4.5 | TBD |
 | 2026-10-18 | BAL | CLE | 1056.70 | 943.43 | 61.9% | 38.1% | +3.5 | TBD |
 | 2026-10-18 | CAR | PHI | 965.67 | 1009.99 | 39.6% | 60.4% | -3.0 | TBD |
