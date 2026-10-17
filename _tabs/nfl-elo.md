@@ -9,40 +9,40 @@ tags: [ELO, forecasting, football]
 
 Current NFL Elo rankings as of **latest available update**.
 
-| Rank | Team | Elo | Conference | Division |
-| ---: | --- | ---: | --- | --- |
-| 1 | SF | 1138.02 | NFC | NFC West |
-| 2 | SEA | 1129.86 | NFC | NFC West |
-| 3 | BUF | 1119.80 | AFC | AFC East |
-| 4 | MIN | 1119.09 | NFC | NFC North |
-| 5 | JAX | 1109.96 | AFC | AFC South |
-| 6 | NE | 1093.95 | AFC | AFC East |
-| 7 | DEN | 1084.19 | AFC | AFC West |
-| 8 | LA | 1066.36 | NFC | NFC West |
-| 9 | KC | 1061.47 | AFC | AFC West |
-| 10 | BAL | 1056.70 | AFC | AFC North |
-| 11 | DET | 1036.16 | NFC | NFC North |
-| 12 | CHI | 1031.75 | NFC | NFC North |
-| 13 | PIT | 1022.79 | AFC | AFC North |
-| 14 | CIN | 1019.00 | AFC | AFC North |
-| 15 | GB | 1013.94 | NFC | NFC North |
-| 16 | HOU | 1011.60 | AFC | AFC South |
-| 17 | PHI | 1009.99 | NFC | NFC East |
-| 18 | ATL | 987.17 | NFC | NFC South |
-| 19 | NYG | 973.05 | NFC | NFC East |
-| 20 | CAR | 965.67 | NFC | NFC South |
-| 21 | IND | 961.53 | AFC | AFC South |
-| 22 | DAL | 949.83 | NFC | NFC East |
-| 23 | TB | 945.23 | NFC | NFC South |
-| 24 | CLE | 943.43 | AFC | AFC North |
-| 25 | LV | 940.61 | AFC | AFC West |
-| 26 | WAS | 923.96 | NFC | NFC East |
-| 27 | LAC | 915.13 | AFC | AFC West |
-| 28 | NYJ | 907.06 | AFC | AFC East |
-| 29 | NO | 906.42 | NFC | NFC South |
-| 30 | ARI | 880.68 | NFC | NFC West |
-| 31 | MIA | 871.70 | AFC | AFC East |
-| 32 | TEN | 807.66 | AFC | AFC South |
+| Rank | Team | Elo | Rank Δ | Conference | Division |
+| ---: | --- | ---: | ---: | --- | --- |
+| 1 | SF | 1138.02 | +16.83 | NFC | NFC West |
+| 2 | SEA | 1129.86 | -8.39 | NFC | NFC West |
+| 3 | BUF | 1119.80 | +6.44 | AFC | AFC East |
+| 4 | MIN | 1119.09 | +12.85 | NFC | NFC North |
+| 5 | JAX | 1109.96 | +8.08 | AFC | AFC South |
+| 6 | NE | 1093.95 | +19.22 | AFC | AFC East |
+| 7 | DEN | 1084.19 | +8.39 | AFC | AFC West |
+| 8 | LA | 1066.36 | -6.44 | NFC | NFC West |
+| 9 | KC | 1061.47 | +11.65 | AFC | AFC West |
+| 10 | BAL | 1056.70 | +8.95 | AFC | AFC North |
+| 11 | DET | 1036.16 | +24.22 | NFC | NFC North |
+| 12 | CHI | 1031.75 | -39.65 | NFC | NFC North |
+| 13 | PIT | 1022.79 | +21.76 | AFC | AFC North |
+| 14 | CIN | 1019.00 | +15.02 | AFC | AFC North |
+| 15 | GB | 1013.94 | +39.65 | NFC | NFC North |
+| 16 | HOU | 1011.60 | +18.65 | AFC | AFC South |
+| 17 | PHI | 1009.99 | -8.08 | NFC | NFC East |
+| 18 | ATL | 987.17 | -8.95 | NFC | NFC South |
+| 19 | NYG | 973.05 | -1.49 | NFC | NFC East |
+| 20 | CAR | 965.67 | +23.75 | NFC | NFC South |
+| 21 | IND | 961.53 | -21.76 | AFC | AFC South |
+| 22 | DAL | 949.83 | -28.81 | NFC | NFC East |
+| 23 | TB | 945.23 | +28.81 | NFC | NFC South |
+| 24 | CLE | 943.43 | -20.91 | AFC | AFC North |
+| 25 | LV | 940.61 | -19.22 | AFC | AFC West |
+| 26 | WAS | 923.96 | +1.49 | NFC | NFC East |
+| 27 | LAC | 915.13 | -13.10 | AFC | AFC West |
+| 28 | NYJ | 907.06 | +20.91 | AFC | AFC East |
+| 29 | NO | 906.42 | -12.85 | NFC | NFC South |
+| 30 | ARI | 880.68 | -24.22 | NFC | NFC West |
+| 31 | MIA | 871.70 | -15.02 | AFC | AFC East |
+| 32 | TEN | 807.66 | -18.65 | AFC | AFC South |
 
 ## Weekly Predictions
 

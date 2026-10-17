@@ -34,6 +34,7 @@ jobs:
         env:
           NFL_RANKINGS_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/current_elo_rankings.csv
           NFL_WEEKLY_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/weekly_projections.csv
+          NFL_HISTORY_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/nfl_elo_history.csv
           NFL_PERFORMANCE_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/performance_games.csv
         run: |
           python - <<'PY'
@@ -67,6 +68,13 @@ jobs:
               raise SystemExit(f"The NFL rankings CSV is missing columns: {sorted(missing)}")
 
           rows.sort(key=lambda row: int(float(row["rank"])))
+
+          changes = {}
+          with urllib.request.urlopen(os.environ["NFL_HISTORY_URL"], timeout=30) as response:
+              history = csv.DictReader(io.StringIO(response.read().decode("utf-8-sig")))
+              for game in history:
+                  for side in ("home", "away"):
+                      changes[game[f"{side}_team"]] = float(game[f"elo_{side}_post"]) - float(game[f"elo_{side}_pre"])
 
           with urllib.request.urlopen(os.environ["NFL_WEEKLY_URL"], timeout=30) as response:
               weekly_text = response.read().decode("utf-8-sig")
@@ -138,8 +146,8 @@ jobs:
               "",
               f"Current NFL Elo rankings as of **{as_of_date}**.",
               "",
-              "| Rank | Team | Elo | Conference | Division |",
-              "| ---: | --- | ---: | --- | --- |",
+              "| Rank | Team | Elo | Rank Δ | Conference | Division |",
+              "| ---: | --- | ---: | ---: | --- | --- |",
           ]
 
           for row in rows:
@@ -148,7 +156,7 @@ jobs:
               conference = clean(row.get("conference")) or division[:3]
               lines.append(
                   f"| {clean(row['rank'])} | {team} | {elo_display(row['elo'])} | "
-                  f"{conference} | {division} |"
+                  f"{changes[team]:+.2f} | {conference} | {division} |"
               )
 
           lines.extend(["", "## Weekly Predictions", ""])
