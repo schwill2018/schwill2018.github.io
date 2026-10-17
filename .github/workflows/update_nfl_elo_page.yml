@@ -71,10 +71,34 @@ jobs:
 
           changes = {}
           with urllib.request.urlopen(os.environ["NFL_HISTORY_URL"], timeout=30) as response:
-              history = csv.DictReader(io.StringIO(response.read().decode("utf-8-sig")))
-              for game in history:
-                  for side in ("home", "away"):
-                      changes[game[f"{side}_team"]] = float(game[f"elo_{side}_post"]) - float(game[f"elo_{side}_pre"])
+              history = list(csv.DictReader(io.StringIO(response.read().decode("utf-8-sig"))))
+          history.sort(key=lambda game: (int(game["season"]), int(game["week"]), game["gameday"], game.get("gametime", ""), game["game_id"]))
+          latest_season = max(int(game["season"]) for game in history)
+          season_games = [game for game in history if int(game["season"]) == latest_season]
+          latest_week = max(int(game["week"]) for game in season_games)
+
+          # Seed each team's season-opening rating, including offseason regression.
+          # Then replay completed games before the comparison week.
+          baseline = {}
+          for game in season_games:
+              for side in ("home", "away"):
+                  baseline.setdefault(game[f"{side}_team"], float(game[f"elo_{side}_pre"]))
+          for game in season_games:
+              for side in ("home", "away"):
+                  team = game[f"{side}_team"]
+                  changes[team] = float(game[f"elo_{side}_post"]) - float(game[f"elo_{side}_pre"])
+                  if int(game["week"]) < latest_week:
+                      baseline[team] = float(game[f"elo_{side}_post"])
+          for row in rows:
+              baseline.setdefault(row["team"], float(row["elo"]))
+          # Equal ratings share a rank; compare against the same rule for current Elo.
+          def rank_ratings(ratings):
+              return {team: 1 + sum(other > rating for other in ratings.values())
+                      for team, rating in ratings.items()}
+
+          previous_ranks = rank_ratings({row["team"]: baseline[row["team"]] for row in rows})
+          current_ranks = rank_ratings({row["team"]: float(row["elo"]) for row in rows})
+          rank_changes = {team: previous_ranks[team] - current_ranks[team] for team in current_ranks}
 
           with urllib.request.urlopen(os.environ["NFL_WEEKLY_URL"], timeout=30) as response:
               weekly_text = response.read().decode("utf-8-sig")
@@ -146,8 +170,8 @@ jobs:
               "",
               f"Current NFL Elo rankings as of **{as_of_date}**.",
               "",
-              "| Rank | Team | Elo | Rank Δ | Conference | Division |",
-              "| ---: | --- | ---: | ---: | --- | --- |",
+              "| Rank | Team | Elo | Elo Δ | Rank Δ | Conference | Division |",
+              "| ---: | --- | ---: | ---: | ---: | --- | --- |",
           ]
 
           for row in rows:
@@ -156,9 +180,10 @@ jobs:
               conference = clean(row.get("conference")) or division[:3]
               lines.append(
                   f"| {clean(row['rank'])} | {team} | {elo_display(row['elo'])} | "
-                  f"{changes[team]:+.2f} | {conference} | {division} |"
+                  f"{changes.get(team, 0):+.2f} | {rank_changes[team]:+d} | {conference} | {division} |"
               )
 
+          lines.extend(["", f"Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of Week {latest_week} of {latest_season}; 0 means unchanged."])
           lines.extend(["", "## Weekly Predictions", ""])
           if weekly_rows:
               week = clean(weekly_rows[0]["week"])
