@@ -70,3 +70,5 @@ Negative Home Spread favors the home team; positive favors the away team.
 [View model performance]({% link _tabs/nfl-elo-performance.md %})
 
 [Click here to get the data](https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/nfl_elo_history.csv)
+
+<script src="{{ '/assets/js/nfl-rankings-sort.js' | relative_url }}" defer></script>
