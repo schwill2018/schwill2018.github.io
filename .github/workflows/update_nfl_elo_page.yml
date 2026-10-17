@@ -1,0 +1,237 @@
+name: Update NFL Elo Page
+
+on:
+  # Run after the NFL Elo repository's daily update.
+  schedule:
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-nfl-elo-page
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the published portfolio branch
+        uses: actions/checkout@v7
+        with:
+          ref: schwill2018-patch-chirpy
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Build the NFL Elo pages and performance data
+        env:
+          NFL_RANKINGS_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/current_elo_rankings.csv
+          NFL_WEEKLY_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/weekly_projections.csv
+          NFL_HISTORY_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/nfl_elo_history.csv
+          NFL_PERFORMANCE_URL: https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/performance_games.csv
+        run: |
+          python - <<'PY'
+          import csv
+          import io
+          import os
+          import urllib.request
+          from pathlib import Path
+
+          division_map = {
+              "BUF": "AFC East", "MIA": "AFC East", "NE": "AFC East", "NYJ": "AFC East",
+              "BAL": "AFC North", "CIN": "AFC North", "CLE": "AFC North", "PIT": "AFC North",
+              "HOU": "AFC South", "IND": "AFC South", "JAX": "AFC South", "TEN": "AFC South",
+              "DEN": "AFC West", "KC": "AFC West", "LV": "AFC West", "LAC": "AFC West",
+              "DAL": "NFC East", "NYG": "NFC East", "PHI": "NFC East", "WAS": "NFC East",
+              "CHI": "NFC North", "DET": "NFC North", "GB": "NFC North", "MIN": "NFC North",
+              "ATL": "NFC South", "CAR": "NFC South", "NO": "NFC South", "TB": "NFC South",
+              "ARI": "NFC West", "LA": "NFC West", "SF": "NFC West", "SEA": "NFC West",
+          }
+
+          with urllib.request.urlopen(os.environ["NFL_RANKINGS_URL"], timeout=30) as response:
+              text = response.read().decode("utf-8-sig")
+
+          rows = list(csv.DictReader(io.StringIO(text)))
+          if not rows:
+              raise SystemExit("The NFL rankings CSV was empty.")
+
+          required = {"rank", "team", "elo"}
+          missing = required - set(rows[0])
+          if missing:
+              raise SystemExit(f"The NFL rankings CSV is missing columns: {sorted(missing)}")
+
+          rows.sort(key=lambda row: int(float(row["rank"])))
+
+          changes = {}
+          with urllib.request.urlopen(os.environ["NFL_HISTORY_URL"], timeout=30) as response:
+              history = list(csv.DictReader(io.StringIO(response.read().decode("utf-8-sig"))))
+          history.sort(key=lambda game: (int(game["season"]), int(game["week"]), game["gameday"], game.get("gametime", ""), game["game_id"]))
+          latest_season = max(int(game["season"]) for game in history)
+          season_games = [game for game in history if int(game["season"]) == latest_season]
+          latest_week = max(int(game["week"]) for game in season_games)
+
+          # Seed each team's season-opening rating, including offseason regression.
+          # Then replay completed games before the comparison week.
+          baseline = {}
+          for game in season_games:
+              for side in ("home", "away"):
+                  baseline.setdefault(game[f"{side}_team"], float(game[f"elo_{side}_pre"]))
+          for game in season_games:
+              for side in ("home", "away"):
+                  team = game[f"{side}_team"]
+                  changes[team] = float(game[f"elo_{side}_post"]) - float(game[f"elo_{side}_pre"])
+                  if int(game["week"]) < latest_week:
+                      baseline[team] = float(game[f"elo_{side}_post"])
+          for row in rows:
+              baseline.setdefault(row["team"], float(row["elo"]))
+          # Equal ratings share a rank; compare against the same rule for current Elo.
+          def rank_ratings(ratings):
+              return {team: 1 + sum(other > rating for other in ratings.values())
+                      for team, rating in ratings.items()}
+
+          previous_ranks = rank_ratings({row["team"]: baseline[row["team"]] for row in rows})
+          current_ranks = rank_ratings({row["team"]: float(row["elo"]) for row in rows})
+          rank_changes = {team: previous_ranks[team] - current_ranks[team] for team in current_ranks}
+
+          with urllib.request.urlopen(os.environ["NFL_WEEKLY_URL"], timeout=30) as response:
+              weekly_text = response.read().decode("utf-8-sig")
+
+          weekly_reader = csv.DictReader(io.StringIO(weekly_text))
+          weekly_required = {
+              "as_of_date", "week", "gameday", "away_team", "home_team",
+              "away_elo", "home_elo", "p_away", "p_home", "outcome",
+          }
+          weekly_missing = weekly_required - set(weekly_reader.fieldnames or [])
+          if weekly_missing:
+              raise SystemExit(f"The weekly projections CSV is missing columns: {sorted(weekly_missing)}")
+
+          weekly_rows = list(weekly_reader)
+          weekly_rows.sort(key=lambda row: (row["gameday"], row.get("gametime", "")))
+
+          with urllib.request.urlopen(os.environ["NFL_PERFORMANCE_URL"], timeout=30) as response:
+              performance_text = response.read().decode("utf-8-sig")
+
+          performance_reader = csv.DictReader(io.StringIO(performance_text))
+          performance_required = {
+              "season", "week", "game_id", "gameday", "away_team", "home_team",
+              "p_home", "actual_home_win", "evaluation_type",
+          }
+          performance_missing = performance_required - set(performance_reader.fieldnames or [])
+          if performance_missing:
+              raise SystemExit(
+                  f"The performance games CSV is missing columns: {sorted(performance_missing)}"
+              )
+
+          performance_rows = list(performance_reader)
+          if not performance_rows:
+              raise SystemExit("The performance games CSV was empty.")
+
+          allowed_evaluation_types = {"historical", "deployed"}
+          unexpected_evaluation_types = {
+              row["evaluation_type"] for row in performance_rows
+              if row["evaluation_type"] not in allowed_evaluation_types
+          }
+          if unexpected_evaluation_types:
+              raise SystemExit(
+                  "The performance games CSV has unexpected evaluation_type values: "
+                  f"{sorted(unexpected_evaluation_types)}"
+              )
+
+          def clean(value):
+              return str(value or "").replace("|", "\\|").replace("\n", " ").strip()
+
+          # Display-only formatting: underlying CSVs and calculations are unchanged.
+          def elo_display(value):
+            return f"{float(value):.2f}"
+
+          def spread_display(value):
+              if value is None or not str(value).strip():
+                  return ""
+              spread = float(value)
+              return "0.0" if spread == 0 else f"{spread:+.1f}"
+
+          as_of_date = clean(rows[0].get("as_of_date")) or "latest available update"
+          lines = [
+              "---",
+              "layout: page",
+              "title: NFL Elo",
+              "icon: fas fa-football-ball",
+              "order: 7",
+              "categories: [sports]",
+              "tags: [ELO, forecasting, football]",
+              "---",
+              "",
+              f"Current NFL Elo rankings as of **{as_of_date}**.",
+              "",
+              "| Rank | Team | Elo | Elo Δ | Rank Δ | Conference | Division |",
+              "| ---: | --- | ---: | ---: | ---: | --- | --- |",
+          ]
+
+          for row in rows:
+              team = clean(row["team"])
+              division = clean(row.get("division")) or division_map.get(team, "")
+              conference = clean(row.get("conference")) or division[:3]
+              lines.append(
+                  f"| {clean(row['rank'])} | {team} | {elo_display(row['elo'])} | "
+                  f"{changes.get(team, 0):+.2f} | {rank_changes[team]:+d} | {conference} | {division} |"
+              )
+
+          lines.extend(["", f"Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of Week {latest_week} of {latest_season}; 0 means unchanged."])
+          lines.extend(["", "## Weekly Predictions", ""])
+          if weekly_rows:
+              week = clean(weekly_rows[0]["week"])
+              weekly_date = clean(weekly_rows[0]["as_of_date"])
+              lines.extend([
+                  f"NFL Week {week}: forecasts as of **{weekly_date}**.",
+                  "",
+                  "| Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Outcome |",
+                  "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
+              ])
+              for row in weekly_rows:
+                  lines.append(
+                      f"| {clean(row['gameday'])} | {clean(row['away_team'])} | "
+                      f"{clean(row['home_team'])} | {elo_display(row['away_elo'])} | "
+                      f"{elo_display(row['home_elo'])} | "
+                      f"{float(row['p_away']):.1%} | {float(row['p_home']):.1%} | "
+                      f"{spread_display(row.get('model_home_spread'))} | "
+                      f"{clean(row['outcome'])} |"
+                  )
+              lines.extend(["", "Negative Home Spread favors the home team; positive favors the away team."])
+          else:
+              lines.append("No weekly projections are currently available.")
+
+          lines.extend([
+              "",
+              "[View model performance]({% link _tabs/nfl-elo-performance.md %})",
+              "",
+              "[Click here to get the data](https://raw.githubusercontent.com/schwill2018/nfl_elo_project/HEAD/nfl_elo_history.csv)",
+              "",
+              '<script src="{{ \'/assets/js/nfl-rankings-sort.js\' | relative_url }}" defer></script>',
+          ])
+
+          Path("_tabs").mkdir(exist_ok=True)
+          Path("_tabs/nfl-elo.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+          performance_path = Path("assets/data/nfl-elo/performance_games.csv")
+          performance_path.parent.mkdir(parents=True, exist_ok=True)
+          performance_path.write_text(performance_text, encoding="utf-8")
+          PY
+
+      - name: Commit the updated page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _tabs/nfl-elo.md _tabs/nfl-elo-performance.md assets/data/nfl-elo/performance_games.csv
+          if git diff --cached --quiet; then
+            echo "No NFL Elo page changes to save."
+            exit 0
+          fi
+          git commit -m "Update NFL Elo pages and performance data"
+          git push origin HEAD:schwill2018-patch-chirpy
