@@ -1,0 +1,44 @@
+name: Update FBS ELO Pages
+
+on:
+  # The college model updates at 08:00 UTC, with a 30-minute timeout.
+  schedule:
+    - cron: "45 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-fbs-elo-pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the published portfolio branch
+        uses: actions/checkout@v7
+        with:
+          ref: schwill2018-patch-chirpy
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Update FBS rankings, weekly games, and performance data
+        run: python tools/update_fbs_elo_data.py
+
+      - name: Commit updated FBS data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/fbs-elo/current_elo_rankings.csv assets/data/fbs-elo/weekly_projections.csv assets/data/fbs-elo/performance_games.csv
+          if git diff --cached --quiet; then
+            echo "No FBS data changes to save."
+            exit 0
+          fi
+          git commit -m "Update FBS Elo data"
+          git push origin HEAD:schwill2018-patch-chirpy

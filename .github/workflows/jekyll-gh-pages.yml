@@ -5,7 +5,7 @@ on:
     branches: [schwill2018-patch-chirpy]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Update NFL Elo Page"]
+    workflows: ["Update NFL Elo Page", "Update FBS ELO Pages"]
     types: [completed]
     branches: [schwill2018-patch-chirpy]
 
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # Include the page committed by the completed NFL Elo workflow.
+          # Include the page committed by the completed Elo data workflow.
           ref: schwill2018-patch-chirpy
 
       - uses: ruby/setup-ruby@v1
