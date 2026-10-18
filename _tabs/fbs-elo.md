@@ -41,7 +41,7 @@ tags: [ELO, forecasting, football, FBS]
   </div>
   <p id="fbs-weekly-empty" class="text-muted" hidden>No games match this selection.</p>
   <p>Negative Home Spread favors the home team; positive favors the away team.</p>
-  <p class="text-muted">Rankings and the game filter use current Elo ranks. A “Recorded” forecast was saved before kickoff. “Historical” is the model’s historical pregame estimate for a game played before tracking began; it is excluded from recorded-prediction performance.</p>
+  <p class="text-muted">Numbers beside team names and the game filter use current Elo ranks. “Recorded” forecasts were saved before kickoff. “Historical” and “Model” estimates fill gaps when no recorded forecast is available; only recorded forecasts count toward current-season performance.</p>
   <p id="fbs-load-error" class="text-danger" hidden>FBS Elo data could not be loaded. Please try again later.</p>
 </div>
 

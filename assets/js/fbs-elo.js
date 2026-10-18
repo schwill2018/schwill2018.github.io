@@ -104,6 +104,10 @@
       loadCsv(root.dataset.weekly, ["game_id", "away_rank", "home_rank", "p_home", "outcome", "prediction_source"]),
     ]);
     if (!rankings.length) throw new Error("Empty rankings");
+    weekly.forEach((row) => {
+      row.away_display = `${numeric(row.away_rank) ? `#${Number(row.away_rank)} ` : ""}${row.away_team_name}`;
+      row.home_display = `${numeric(row.home_rank) ? `#${Number(row.home_rank)} ` : ""}${row.home_team_name}`;
+    });
     if (rankings.some((row) => !numeric(row.rank) || !numeric(row.elo))) throw new Error("Invalid rankings");
     const rankingsTable = tableController("fbs-rankings", [
       { key: "rank", numeric: true }, { key: "team_name" }, { key: "elo", numeric: true, format: decimal },
@@ -114,11 +118,11 @@
     const phase = rankings[0].comparison_game_type === "POST" ? "postseason " : "";
     byId("fbs-delta-note").textContent = `Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of ${phase}Week ${rankings[0].comparison_week} of ${rankings[0].comparison_season}.`;
     const weeklyTable = tableController("fbs-weekly", [
-      { key: "gameday" }, { key: "away_team_name" }, { key: "home_team_name" },
+      { key: "gameday" }, { key: "away_display" }, { key: "home_display" },
       { key: "away_elo", numeric: true, format: decimal }, { key: "home_elo", numeric: true, format: decimal },
       { key: "p_away", numeric: true, format: probability }, { key: "p_home", numeric: true, format: probability },
       { key: "model_home_spread", numeric: true, format: signed(1) }, { key: "outcome" },
-      { key: "prediction_source", format: (value) => ({ "Recorded pregame": "Recorded", "Historical model": "Historical", "Unavailable": "Unavailable" }[value] || value) },
+      { key: "prediction_source", format: (value) => ({ "Recorded pregame": "Recorded", "Historical model": "Historical", "Model estimate": "Model", "Unavailable": "Unavailable" }[value] || value) },
     ], null, Number.MAX_SAFE_INTEGER);
     function renderWeekly() {
       const cutoff = Number(byId("fbs-game-cutoff").value);
