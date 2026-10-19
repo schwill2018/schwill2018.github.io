@@ -5,7 +5,7 @@ on:
     branches: [schwill2018-patch-chirpy]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Update NFL Elo Page", "Update FBS ELO Pages"]
+    workflows: ["Update NFL Elo Page", "Update FBS ELO Pages", "Update Premier League Elo Pages"]
     types: [completed]
     branches: [schwill2018-patch-chirpy]
 
