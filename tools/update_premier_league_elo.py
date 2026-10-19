@@ -37,7 +37,8 @@ def render(rankings, weekly, history, metadata):
     history = sorted(history, key=lambda row: (int(row['season']), row['gameday'], row['gametime'], row['game_id']))
     season = int(metadata['current_season'])
     season_games = [g for g in history if int(g['season']) == season]
-    comparison_week = max((g['week'] for g in season_games), default='')
+    comparison_week = (int(weekly[0]['week']) if weekly else
+                       max((int(g['week']) for g in season_games), default=0))
     baseline, changes = {}, {}
     for game in season_games:
         for side in ('home', 'away'):
@@ -47,7 +48,7 @@ def render(rankings, weekly, history, metadata):
         for side in ('home', 'away'):
             team = game[f'{side}_team']
             changes[team] = float(game[f'elo_{side}_post']) - float(game[f'elo_{side}_pre'])
-            if game['week'] < comparison_week:
+            if int(game['week']) < comparison_week:
                 baseline[team] = float(game[f'elo_{side}_post'])
     current = {r['team']: float(r['elo']) for r in rankings}
     baseline = {team: baseline.get(team, elo) for team, elo in current.items()}
@@ -63,10 +64,10 @@ def render(rankings, weekly, history, metadata):
         team = row['team']
         lines.append(f"| {row['rank']} | {clean(team)} | {number(row['elo'])} | {changes.get(team, 0):+.2f} | {old_rank[team] - new_rank[team]:+d} |")
     lines += ['', "Elo Δ is the change from each team's latest completed game this season. "
-              f"Rank Δ is places gained (+) or lost (−) since the start of calendar week {clean(comparison_week) or 'the season'}; 0 means unchanged.",
+              f"Rank Δ is places gained (+) or lost (−) since the start of Matchday {comparison_week}; 0 means unchanged.",
               '', '## Weekly Predictions', '']
     if weekly:
-        lines += [f"Calendar week **{clean(weekly[0]['week'])}**. Kickoff times are UK local time.", '',
+        lines += [f"Matchday **{int(weekly[0]['week'])} of 38**. Kickoff times are UK local time.", '',
                   '| Date | Time | Away | Home | Away Elo | Home Elo | Away Elo Expected Score | Home Elo Expected Score | Home Spread | Forecast Date | Outcome |',
                   '| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |']
         for row in sorted(weekly, key=lambda r: (r['gameday'], r['gametime'], r['game_id'])):
@@ -81,8 +82,7 @@ def render(rankings, weekly, history, metadata):
     else:
         lines += ['No weekly fixtures are currently available from the source.']
     lines += ['', 'Elo expected score uses win = 1, draw = 0.5, loss = 0; it is not a three-way win probability. Negative Home Spread favors the home team; positive favors the away team.', '',
-              'Forecasts stay fixed unless a participating team’s rating/rank or kickoff changes before the game. They are locked after kickoff. Completed games remain visible for the week. A dash means no pregame forecast was recorded.', '',
-              'Weeks are ISO calendar weeks, not official league matchweeks. The fixture feed may not include every upcoming match yet.', '',
+              'Weekly forecasts stay fixed while rankings update daily. Completed games remain visible until the matchday finishes. A dash means no pregame forecast was recorded.', '',
               '[View model performance]({% link _tabs/premier-league-elo-performance.md %})', '',
               '[Click here to get the data](https://raw.githubusercontent.com/schwill2018/premiere-league-elo/main/pl_elo_history.csv)', '',
               '<script src="{{ \'/assets/js/nfl-rankings-sort.js\' | relative_url }}" defer></script>']
