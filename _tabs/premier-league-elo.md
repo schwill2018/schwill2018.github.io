@@ -41,20 +41,20 @@ Elo Δ is the change from each team's latest completed game this season. Rank Δ
 
 Matchday **8 of 38**. Kickoff times are UK local time.
 
-| Date | Time | Away | Home | Away Elo | Home Elo | Away Elo Expected Score | Home Elo Expected Score | Home Spread | Forecast Date | Outcome |
+| Date | Time | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Forecast Date | Outcome |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 2026-10-23 | 20:00 | Nott&#x27;m Forest | Ipswich | 1078.55 | 938.53 | 0.606 | 0.394 | +0.5 | 2026-10-19 | TBD |
-| 2026-10-24 | 12:30 | Man City | Aston Villa | 1353.64 | 1127.70 | 0.716 | 0.284 | +0.5 | 2026-10-19 | TBD |
-| 2026-10-24 | 15:00 | Everton | Arsenal | 1076.16 | 1325.23 | 0.141 | 0.859 | -1.5 | 2026-10-19 | TBD |
-| 2026-10-24 | 15:00 | Fulham | Coventry | 1055.55 | 1008.60 | 0.474 | 0.526 | -0.0 | 2026-10-19 | TBD |
-| 2026-10-24 | 17:30 | Tottenham | Chelsea | 999.30 | 1143.06 | 0.231 | 0.769 | -1.0 | 2026-10-19 | TBD |
-| 2026-10-25 | 14:00 | Newcastle | Crystal Palace | 1062.38 | 1042.41 | 0.436 | 0.564 | -0.0 | 2026-10-19 | TBD |
-| 2026-10-25 | 14:00 | Brentford | Hull | 1139.12 | 977.49 | 0.636 | 0.364 | +0.5 | 2026-10-19 | TBD |
-| 2026-10-25 | 14:00 | Brighton | Liverpool | 1221.34 | 1181.96 | 0.463 | 0.537 | -0.0 | 2026-10-19 | TBD |
-| 2026-10-25 | 14:00 | Bournemouth | Man United | 1134.85 | 1177.58 | 0.350 | 0.650 | -0.5 | 2026-10-19 | TBD |
-| 2026-10-25 | 16:30 | Leeds | Sunderland | 1114.28 | 1023.56 | 0.537 | 0.463 | +0.0 | 2026-10-19 | TBD |
+| 2026-10-23 | 20:00 | Nott&#x27;m Forest | Ipswich | 1078.55 | 938.53 | 60.6% | 39.4% | +0.5 | 2026-10-19 | TBD |
+| 2026-10-24 | 12:30 | Man City | Aston Villa | 1353.64 | 1127.70 | 71.6% | 28.4% | +0.5 | 2026-10-19 | TBD |
+| 2026-10-24 | 15:00 | Everton | Arsenal | 1076.16 | 1325.23 | 14.1% | 85.9% | -1.5 | 2026-10-19 | TBD |
+| 2026-10-24 | 15:00 | Fulham | Coventry | 1055.55 | 1008.60 | 47.4% | 52.6% | -0.0 | 2026-10-19 | TBD |
+| 2026-10-24 | 17:30 | Tottenham | Chelsea | 999.30 | 1143.06 | 23.1% | 76.9% | -1.0 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Newcastle | Crystal Palace | 1062.38 | 1042.41 | 43.6% | 56.4% | -0.0 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Brentford | Hull | 1139.12 | 977.49 | 63.6% | 36.4% | +0.5 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Brighton | Liverpool | 1221.34 | 1181.96 | 46.3% | 53.7% | -0.0 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Bournemouth | Man United | 1134.85 | 1177.58 | 35.0% | 65.0% | -0.5 | 2026-10-19 | TBD |
+| 2026-10-25 | 16:30 | Leeds | Sunderland | 1114.28 | 1023.56 | 53.7% | 46.3% | +0.0 | 2026-10-19 | TBD |
 
-Elo expected score uses win = 1, draw = 0.5, loss = 0; it is not a three-way win probability. Negative Home Spread favors the home team; positive favors the away team.
+Win probabilities use a two-outcome Elo approximation; draws are not separately modeled. Negative Home Spread favors the home team; positive favors the away team.
 
 Weekly forecasts stay fixed while rankings update daily. Completed games remain visible until the matchday finishes. A dash means no pregame forecast was recorded.
 

@@ -68,7 +68,7 @@ def render(rankings, weekly, history, metadata):
               '', '## Weekly Predictions', '']
     if weekly:
         lines += [f"Matchday **{int(weekly[0]['week'])} of 38**. Kickoff times are UK local time.", '',
-                  '| Date | Time | Away | Home | Away Elo | Home Elo | Away Elo Expected Score | Home Elo Expected Score | Home Spread | Forecast Date | Outcome |',
+                  '| Date | Time | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Forecast Date | Outcome |',
                   '| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |']
         for row in sorted(weekly, key=lambda r: (r['gameday'], r['gametime'], r['game_id'])):
             result = row['result']
@@ -76,12 +76,12 @@ def render(rankings, weekly, history, metadata):
             if result != 'TBD':
                 outcome += f" ({number(row['home_score'], '.0f')}–{number(row['away_score'], '.0f')} home–away)"
             values = [clean(row['gameday'][:10]), clean(row['gametime']), clean(row['away_team']), clean(row['home_team']),
-                      number(row['away_elo']), number(row['home_elo']), number(row['p_away'], '.3f'), number(row['p_home'], '.3f'),
+                      number(row['away_elo']), number(row['home_elo']), number(row['p_away'], '.1%'), number(row['p_home'], '.1%'),
                       number(row['model_home_spread'], '+.1f'), clean(row['as_of_date']) or '—', clean(outcome)]
             lines.append('| ' + ' | '.join(values) + ' |')
     else:
         lines += ['No weekly fixtures are currently available from the source.']
-    lines += ['', 'Elo expected score uses win = 1, draw = 0.5, loss = 0; it is not a three-way win probability. Negative Home Spread favors the home team; positive favors the away team.', '',
+    lines += ['', 'Win probabilities use a two-outcome Elo approximation; draws are not separately modeled. Negative Home Spread favors the home team; positive favors the away team.', '',
               'Weekly forecasts stay fixed while rankings update daily. Completed games remain visible until the matchday finishes. A dash means no pregame forecast was recorded.', '',
               '[View model performance]({% link _tabs/premier-league-elo-performance.md %})', '',
               '[Click here to get the data](https://raw.githubusercontent.com/schwill2018/premiere-league-elo/main/pl_elo_history.csv)', '',
