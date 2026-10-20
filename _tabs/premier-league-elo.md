@@ -8,51 +8,51 @@ categories: [sports]
 tags: [ELO, forecasting, soccer]
 ---
 
-Current Premier League Elo rankings as of **2026-10-19**.
+Current Premier League Elo rankings as of **2026-10-20**.
 
-Latest completed match in the source: **2026-10-18**.
+Latest completed match in the source: **2026-10-19**.
 
 | Rank | Team | Elo | Elo Δ | Rank Δ |
 | ---: | --- | ---: | ---: | ---: |
 | 1 | Man City | 1353.64 | +1.19 | +0 |
 | 2 | Arsenal | 1325.23 | +6.30 | +0 |
 | 3 | Brighton | 1221.34 | +12.84 | +0 |
-| 4 | Liverpool | 1181.96 | +14.93 | +1 |
-| 5 | Man United | 1177.58 | +0.07 | -1 |
-| 6 | Chelsea | 1143.06 | +23.11 | +2 |
-| 7 | Brentford | 1139.12 | -14.93 | -1 |
-| 8 | Bournemouth | 1134.85 | +10.67 | -1 |
-| 9 | Aston Villa | 1127.70 | +13.81 | +1 |
-| 10 | Leeds | 1114.28 | -0.07 | -1 |
-| 11 | Nott&#x27;m Forest | 1078.55 | -6.30 | +1 |
-| 12 | Everton | 1076.16 | -23.11 | -1 |
+| 4 | Liverpool | 1181.96 | +14.93 | +0 |
+| 5 | Man United | 1177.58 | +0.07 | +0 |
+| 6 | Chelsea | 1143.06 | +23.11 | +0 |
+| 7 | Brentford | 1139.12 | -14.93 | +0 |
+| 8 | Bournemouth | 1134.85 | +10.67 | +0 |
+| 9 | Aston Villa | 1127.70 | +13.81 | +0 |
+| 10 | Leeds | 1114.28 | -0.07 | +0 |
+| 11 | Nott&#x27;m Forest | 1078.55 | -6.30 | +0 |
+| 12 | Everton | 1076.16 | -23.11 | +0 |
 | 13 | Newcastle | 1062.38 | -13.81 | +0 |
-| 14 | Fulham | 1055.55 | +7.61 | +1 |
-| 15 | Crystal Palace | 1042.41 | -12.84 | -1 |
+| 14 | Fulham | 1055.55 | +7.61 | +0 |
+| 15 | Crystal Palace | 1042.41 | -12.84 | +0 |
 | 16 | Sunderland | 1023.56 | -10.67 | +0 |
-| 17 | Coventry | 1008.60 | +31.01 | +0 |
-| 18 | Tottenham | 999.30 | +8.57 | +0 |
+| 17 | Tottenham | 1015.59 | +16.29 | +0 |
+| 18 | Coventry | 992.31 | -16.29 | +0 |
 | 19 | Hull | 977.49 | -7.61 | +0 |
 | 20 | Ipswich | 938.53 | -1.19 | +0 |
 
-Elo Δ is the change from each team's latest completed game this season. Rank Δ is places gained (+) or lost (−) since the start of Matchday 7; 0 means unchanged.
+Elo Δ is the change from each team's latest completed game this season. Rank Δ is places gained (+) or lost (−) since the start of Matchday 8; 0 means unchanged.
 
 ## Weekly Predictions
 
-Matchday **7 of 38**. Kickoff times are UK local time.
+Matchday **8 of 38**. Kickoff times are UK local time.
 
 | Date | Time | Away | Home | Away Elo | Home Elo | Away Elo Expected Score | Home Elo Expected Score | Home Spread | Forecast Date | Outcome |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 2026-10-17 | 12:30 | Chelsea | Everton | — | — | — | — | — | — | Chelsea (0–2 home–away) |
-| 2026-10-17 | 15:00 | Liverpool | Brentford | — | — | — | — | — | — | Liverpool (1–2 home–away) |
-| 2026-10-17 | 15:00 | Hull | Fulham | — | — | — | — | — | — | Fulham (1–0 home–away) |
-| 2026-10-17 | 15:00 | Ipswich | Man City | — | — | — | — | — | — | Man City (3–2 home–away) |
-| 2026-10-17 | 17:30 | Aston Villa | Newcastle | — | — | — | — | — | — | Aston Villa (0–1 home–away) |
-| 2026-10-18 | 14:00 | Sunderland | Bournemouth | — | — | — | — | — | — | Bournemouth (2–0 home–away) |
-| 2026-10-18 | 14:00 | Crystal Palace | Brighton | — | — | — | — | — | — | Brighton (5–0 home–away) |
-| 2026-10-18 | 14:00 | Man United | Leeds | — | — | — | — | — | — | Draw (1–1 home–away) |
-| 2026-10-18 | 16:30 | Arsenal | Nott&#x27;m Forest | — | — | — | — | — | — | Arsenal (0–1 home–away) |
-| 2026-10-19 | 20:00 | Coventry | Tottenham | 1008.60 | 999.30 | 0.421 | 0.579 | -0.0 | 2026-10-19 | TBD |
+| 2026-10-23 | 20:00 | Nott&#x27;m Forest | Ipswich | 1078.55 | 938.53 | 0.606 | 0.394 | +0.5 | 2026-10-19 | TBD |
+| 2026-10-24 | 12:30 | Man City | Aston Villa | 1353.64 | 1127.70 | 0.716 | 0.284 | +0.5 | 2026-10-19 | TBD |
+| 2026-10-24 | 15:00 | Everton | Arsenal | 1076.16 | 1325.23 | 0.141 | 0.859 | -1.5 | 2026-10-19 | TBD |
+| 2026-10-24 | 15:00 | Fulham | Coventry | 1055.55 | 1008.60 | 0.474 | 0.526 | -0.0 | 2026-10-19 | TBD |
+| 2026-10-24 | 17:30 | Tottenham | Chelsea | 999.30 | 1143.06 | 0.231 | 0.769 | -1.0 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Newcastle | Crystal Palace | 1062.38 | 1042.41 | 0.436 | 0.564 | -0.0 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Brentford | Hull | 1139.12 | 977.49 | 0.636 | 0.364 | +0.5 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Brighton | Liverpool | 1221.34 | 1181.96 | 0.463 | 0.537 | -0.0 | 2026-10-19 | TBD |
+| 2026-10-25 | 14:00 | Bournemouth | Man United | 1134.85 | 1177.58 | 0.350 | 0.650 | -0.5 | 2026-10-19 | TBD |
+| 2026-10-25 | 16:30 | Leeds | Sunderland | 1114.28 | 1023.56 | 0.537 | 0.463 | +0.0 | 2026-10-19 | TBD |
 
 Elo expected score uses win = 1, draw = 0.5, loss = 0; it is not a three-way win probability. Negative Home Spread favors the home team; positive favors the away team.
 
