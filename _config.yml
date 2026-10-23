@@ -59,7 +59,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: G-Q39HEYS3RZ
+    id: # Google tag is installed manually in _includes/metadata-hook.html
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
