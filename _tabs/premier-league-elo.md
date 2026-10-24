@@ -8,9 +8,9 @@ categories: [sports]
 tags: [ELO, forecasting, soccer]
 ---
 
-Current Premier League Elo rankings as of **2026-10-23**.
+Current Premier League Elo rankings as of **2026-10-24**.
 
-Latest completed match in the source: **2026-10-19**.
+Latest completed match in the source: **2026-10-23**.
 
 | Rank | Team | Elo | Elo Δ | Rank Δ |
 | ---: | --- | ---: | ---: | ---: |
@@ -24,8 +24,8 @@ Latest completed match in the source: **2026-10-19**.
 | 8 | Bournemouth | 1134.85 | +10.67 | +0 |
 | 9 | Aston Villa | 1127.70 | +13.81 | +0 |
 | 10 | Leeds | 1114.28 | -0.07 | +0 |
-| 11 | Nott&#x27;m Forest | 1078.55 | -6.30 | +0 |
-| 12 | Everton | 1076.16 | -23.11 | +0 |
+| 11 | Everton | 1076.16 | -23.11 | +1 |
+| 12 | Nott&#x27;m Forest | 1075.68 | -2.87 | -1 |
 | 13 | Newcastle | 1062.38 | -13.81 | +0 |
 | 14 | Fulham | 1055.55 | +7.61 | +0 |
 | 15 | Crystal Palace | 1042.41 | -12.84 | +0 |
@@ -33,7 +33,7 @@ Latest completed match in the source: **2026-10-19**.
 | 17 | Tottenham | 1015.59 | +16.29 | +0 |
 | 18 | Coventry | 992.31 | -16.29 | +0 |
 | 19 | Hull | 977.49 | -7.61 | +0 |
-| 20 | Ipswich | 938.53 | -1.19 | +0 |
+| 20 | Ipswich | 941.40 | +2.87 | +0 |
 
 Elo Δ is the change from each team's latest completed game this season. Rank Δ is places gained (+) or lost (−) since the start of Matchday 8; 0 means unchanged.
 
@@ -43,7 +43,7 @@ Matchday **8 of 38**. Kickoff times are UK local time.
 
 | Date | Time | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Forecast Date | Outcome |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 2026-10-23 | 20:00 | Nott&#x27;m Forest | Ipswich | 1078.55 | 938.53 | 60.6% | 39.4% | +0.5 | 2026-10-19 | TBD |
+| 2026-10-23 | 20:00 | Nott&#x27;m Forest | Ipswich | 1078.55 | 938.53 | 60.6% | 39.4% | +0.5 | 2026-10-19 | Draw (1–1 home–away) |
 | 2026-10-24 | 12:30 | Man City | Aston Villa | 1353.64 | 1127.70 | 71.6% | 28.4% | +0.5 | 2026-10-19 | TBD |
 | 2026-10-24 | 15:00 | Everton | Arsenal | 1076.16 | 1325.23 | 14.1% | 85.9% | -1.5 | 2026-10-19 | TBD |
 | 2026-10-24 | 15:00 | Fulham | Coventry | 1055.55 | 1008.60 | 47.4% | 52.6% | -0.0 | 2026-10-19 | TBD |
