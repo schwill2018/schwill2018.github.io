@@ -8,16 +8,16 @@ categories: [sports]
 tags: [ELO, forecasting, soccer]
 ---
 
-Current Premier League Elo rankings as of **2026-11-01**.
+Current Premier League Elo rankings as of **2026-11-02**.
 
-Latest completed match in the source: **2026-10-31**.
+Latest completed match in the source: **2026-11-01**.
 
 | Rank | Team | Elo | Elo Δ | Rank Δ |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | Arsenal | 1330.00 | +4.77 | +1 |
+| 1 | Arsenal | 1339.92 | +9.92 | +1 |
 | 2 | Man City | 1312.28 | -21.46 | -1 |
 | 3 | Brighton | 1224.55 | +21.46 | +0 |
-| 4 | Liverpool | 1200.21 | +18.24 | +0 |
+| 4 | Liverpool | 1190.29 | -9.92 | +0 |
 | 5 | Bournemouth | 1182.21 | +12.40 | +0 |
 | 6 | Brentford | 1147.68 | +12.22 | +2 |
 | 7 | Aston Villa | 1142.30 | -5.31 | -1 |
@@ -51,7 +51,7 @@ Matchday **9 of 38**. Kickoff times are UK local time.
 | 2026-10-31 | 15:00 | Brighton | Man City | 1203.09 | 1333.74 | 24.5% | 75.5% | -1.0 | 2026-10-26 | Brighton (0–1 home–away) |
 | 2026-10-31 | 17:30 | Crystal Palace | Tottenham | 1019.25 | 1049.37 | 36.6% | 63.4% | -0.5 | 2026-10-26 | Tottenham (2–0 home–away) |
 | 2026-10-31 | 20:00 | Fulham | Aston Villa | 1068.24 | 1147.61 | 30.3% | 69.7% | -0.5 | 2026-10-26 | Draw (1–1 home–away) |
-| 2026-11-01 | 16:30 | Arsenal | Liverpool | 1330.00 | 1200.21 | 59.2% | 40.8% | +0.5 | 2026-10-26 | TBD |
+| 2026-11-01 | 16:30 | Arsenal | Liverpool | 1330.00 | 1200.21 | 59.2% | 40.8% | +0.5 | 2026-10-26 | Arsenal (0–1 home–away) |
 | 2026-11-02 | 20:00 | Everton | Newcastle | 1071.38 | 1085.54 | 38.8% | 61.2% | -0.5 | 2026-10-26 | TBD |
 
 Win probabilities use a two-outcome Elo approximation; draws are not separately modeled. Negative Home Spread favors the home team; positive favors the away team.
