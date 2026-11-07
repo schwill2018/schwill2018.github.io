@@ -1,0 +1,44 @@
+name: Update Premier League Elo Pages
+
+on:
+  # The Premier League model updates at 08:00 UTC, with a 45-minute timeout.
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-premier-league-elo-pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the published portfolio branch
+        uses: actions/checkout@v7
+        with:
+          ref: schwill2018-patch-chirpy
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Update Premier League rankings, weekly games, and performance data
+        run: python tools/update_premier_league_elo.py
+
+      - name: Commit updated Premier League data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _tabs/premier-league-elo.md assets/data/premier-league-elo/performance_games.csv assets/data/premier-league-elo/run_metadata.json
+          if git diff --cached --quiet; then
+            echo "No Premier League data changes to save."
+            exit 0
+          fi
+          git commit -m "Update Premier League Elo data"
+          git push origin HEAD:schwill2018-patch-chirpy
