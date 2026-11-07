@@ -8,9 +8,9 @@ categories: [sports]
 tags: [ELO, forecasting, soccer]
 ---
 
-Current Premier League Elo rankings as of **2026-11-06**.
+Current Premier League Elo rankings as of **2026-11-07**.
 
-Latest completed match in the source: **2026-11-02**.
+Latest completed match in the source: **2026-11-07**.
 
 | Rank | Team | Elo | Elo Δ | Rank Δ |
 | ---: | --- | ---: | ---: | ---: |
@@ -23,15 +23,15 @@ Latest completed match in the source: **2026-11-02**.
 | 7 | Aston Villa | 1142.30 | -5.31 | +0 |
 | 8 | Chelsea | 1127.12 | +17.84 | +0 |
 | 9 | Man United | 1124.78 | -17.84 | +0 |
-| 10 | Leeds | 1100.88 | -12.40 | +0 |
-| 11 | Everton | 1087.55 | +16.17 | +0 |
+| 10 | Leeds | 1109.37 | +8.49 | +0 |
+| 11 | Everton | 1098.25 | +10.70 | +0 |
 | 12 | Fulham | 1073.54 | +5.31 | +0 |
 | 13 | Newcastle | 1069.37 | -16.17 | +0 |
 | 14 | Nott&#x27;m Forest | 1063.46 | -12.22 | +0 |
-| 15 | Tottenham | 1063.26 | +13.89 | +0 |
+| 15 | Tottenham | 1054.77 | -8.49 | +0 |
 | 16 | Sunderland | 1005.94 | -18.62 | +0 |
 | 17 | Crystal Palace | 1005.36 | -13.89 | +0 |
-| 18 | Coventry | 998.24 | +18.62 | +0 |
+| 18 | Coventry | 987.54 | -10.70 | +0 |
 | 19 | Hull | 977.20 | -3.95 | +0 |
 | 20 | Ipswich | 945.35 | +3.95 | +0 |
 
@@ -43,8 +43,8 @@ Matchday **10 of 38**. Kickoff times are UK local time.
 
 | Date | Time | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Forecast Date | Outcome |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 2026-11-06 | 20:00 | Coventry | Everton | 998.24 | 1087.55 | 29.1% | 70.9% | -0.5 | 2026-11-03 | TBD |
-| 2026-11-07 | 12:30 | Tottenham | Leeds | 1063.26 | 1100.88 | 35.6% | 64.4% | -0.5 | 2026-11-03 | TBD |
+| 2026-11-06 | 20:00 | Coventry | Everton | 998.24 | 1087.55 | 29.1% | 70.9% | -0.5 | 2026-11-03 | Everton (3–1 home–away) |
+| 2026-11-07 | 12:30 | Tottenham | Leeds | 1063.26 | 1100.88 | 35.6% | 64.4% | -0.5 | 2026-11-03 | Leeds (1–0 home–away) |
 | 2026-11-07 | 15:00 | Hull | Arsenal | 977.20 | 1339.92 | 7.9% | 92.1% | -2.0 | 2026-11-03 | TBD |
 | 2026-11-07 | 15:00 | Newcastle | Fulham | 1069.37 | 1073.54 | 40.2% | 59.8% | -0.5 | 2026-11-03 | TBD |
 | 2026-11-07 | 17:30 | Man City | Nott&#x27;m Forest | 1312.28 | 1063.46 | 74.2% | 25.8% | +1.0 | 2026-11-03 | TBD |
