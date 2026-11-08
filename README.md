@@ -29,6 +29,23 @@ latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so tha
 
 Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
+### Topic tags
+
+Maintain topic labels in each page's YAML `tags` list. Use consistent spelling and
+capitalization so related posts, project pages, and Elo tabs share an archive.
+The `topic-tags.rb` plugin builds `/tags/<slug>/` pages, the Tags index, and sidebar
+counts from those lists. Redirect-only posts are excluded to avoid listing a
+project twice. Pages using the `page` layout display their tags below the content.
+Previously published tag URLs are preserved with redirects listed in
+`_data/tag_redirects.yml`.
+
+When changing tags on the NFL or Premier League rankings, also update the tags
+written by `.github/workflows/update_nfl_elo_page.yml` or
+`tools/update_premier_league_elo.py` so the next refresh preserves them.
+
+Run `bundle exec ruby tools/check_tags.rb` to build the site and check tag archive
+membership, counts, displayed labels, and link destinations.
+
 ## Contributing
 
 This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.

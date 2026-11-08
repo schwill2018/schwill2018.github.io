@@ -4,7 +4,7 @@ title: NFL Elo
 icon: fas fa-football-ball
 order: 7
 categories: [sports]
-tags: [ELO, forecasting, football]
+tags: [Sports Analytics, NFL, Football, Elo Ratings, Forecasting]
 ---
 
 Current NFL Elo rankings as of **latest available update**.

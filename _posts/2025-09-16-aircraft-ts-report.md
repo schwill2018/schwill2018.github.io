@@ -3,7 +3,7 @@ layout: post
 title: "Forecasting Fleet Utilization & Maintenance: A DS View (Redacted)"
 date: 2025-09-16 12:00 -0500
 categories: [Time Series, Operations]
-tags: [Time Series, ARIMA, Vector Auto Regression, Forecasting, Aircraft]
+tags: [Time Series, Forecasting, Aviation Analytics, ARIMA, Maintenance Planning]
 description: "How flight hours drive maintenance planning, written for data folks with an operations heartbeat."
 math: true
 ---

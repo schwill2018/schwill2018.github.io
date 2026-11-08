@@ -5,7 +5,7 @@ icon: fas fa-futbol
 order: 11
 permalink: /premier-league-elo/
 categories: [sports]
-tags: [ELO, forecasting, soccer]
+tags: [Sports Analytics, Premier League, Elo Ratings, Forecasting]
 ---
 
 Current Premier League Elo rankings as of **2026-11-07**.

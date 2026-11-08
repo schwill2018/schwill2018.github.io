@@ -5,7 +5,7 @@ icon: fas fa-chart-line
 order: 10
 permalink: /fbs-elo-performance/
 categories: [sports]
-tags: [ELO, forecasting, football, FBS]
+tags: [College Football, Sports Analytics, Elo Ratings, Model Evaluation]
 ---
 
 <div id="fbs-elo" data-page="performance" data-performance="{{ '/assets/data/fbs-elo/performance_games.csv' | relative_url }}">

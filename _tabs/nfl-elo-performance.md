@@ -4,7 +4,7 @@ title: NFL Elo Model Performance
 icon: fas fa-chart-line
 order: 8
 categories: [sports]
-tags: [ELO, forecasting, football]
+tags: [NFL, Football, Sports Analytics, Elo Ratings, Model Evaluation]
 ---
 
 ## Historical Model Performance

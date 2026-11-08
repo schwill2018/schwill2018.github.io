@@ -6,7 +6,7 @@ summary: "Developed, evaluated, and deployed machine learning models (GLM, Rando
 description: "Sports analytics project using machine learning and ensemble modeling to predict NHL game outcomes from bookmaker and game-level features."
 date: 2025-08-03
 categories: [Sports Analytics, Machine Learning, Predictive Modeling]
-tags: [NHL, Game Prediction, Ensemble Learning, GLM, Random Forest, XGBoost, Neural Network, Sports Betting]
+tags: [Sports Analytics, NHL, Machine Learning, Ensemble Learning, Sports Betting]
 ---
 
 ## Project Overview

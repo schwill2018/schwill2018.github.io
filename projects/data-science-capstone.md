@@ -6,7 +6,7 @@ summary: "Developed a hybrid machine learning recommendation system that combine
 description: "Hybrid recommendation engine project combining K-Means clustering and KNN to rank neighborhoods using housing, safety, and amenity data."
 date: 2020-09-18
 categories: [Recommendation Systems, Machine Learning, Capstone]
-tags: [K-Means, KNN, Clustering, Personalization, Python, Data Science Capstone]
+tags: [Recommender Systems, Clustering, K-Means, KNN, Personalization]
 ---
 
 ## Project Overview

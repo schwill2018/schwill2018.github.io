@@ -5,7 +5,7 @@ icon: fas fa-chart-line
 order: 12
 permalink: /premier-league-elo-performance/
 categories: [sports]
-tags: [ELO, forecasting, soccer]
+tags: [Premier League, Sports Analytics, Elo Ratings, Model Evaluation]
 ---
 
 Draws are excluded from these accuracy, log-loss, and Brier-score diagnostics, matching the notebook. Elo expected scores are not three-way win probabilities. Seasons use their starting year (2026 means 2026/27); weeks are ISO calendar weeks.

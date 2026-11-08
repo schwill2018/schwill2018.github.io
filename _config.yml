@@ -228,7 +228,8 @@ exclude:
   - "package*.json"
 
 jekyll-archives:
-  enabled: [categories, tags]
+  # Tags are generated across posts, project pages, and tabs by topic-tags.rb.
+  enabled: [categories]
   layouts:
     category: category
     tag: tag

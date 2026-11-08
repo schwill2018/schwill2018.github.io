@@ -6,7 +6,7 @@ summary: "Applied linear and logistic regression with multiple imputation to cli
 description: "Clinical analytics project using regression and multiple imputation to study hip hypermobility and psychosocial outcomes in a hospital cohort."
 date: 2024-12-18
 categories: [Statistical Modeling, Clinical Analytics]
-tags: [Hypermobility, Psychosocial Outcomes, Regression, Multiple Imputation, Shiny App, Healthcare Analytics]
+tags: [Clinical Analytics, Hypermobility, Regression, Multiple Imputation, Psychosocial Outcomes]
 ---
 
 ## Project Overview

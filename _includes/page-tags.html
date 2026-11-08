@@ -1,0 +1,9 @@
+{% if page.tags.size > 0 %}
+  <nav class="post-tags mt-4" aria-label="Page topics">
+    <i class="fa fa-tags fa-fw me-1" aria-hidden="true"></i>
+    {% for tag in page.tags %}
+      {% assign tag_url = tag | slugify | url_encode | prepend: '/tags/' | append: '/' %}
+      <a class="post-tag no-text-decoration" href="{{ tag_url | relative_url }}">{{ tag | escape }}</a>
+    {% endfor %}
+  </nav>
+{% endif %}

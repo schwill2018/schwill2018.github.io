@@ -3,7 +3,7 @@ layout: post
 title: "Dual Supervision: Smarter Recommendations for Living Spaces"
 date: 2020-09-18
 categories: [Machine Learning]
-tags: [Recommender Systems, AI, Dual Supervision]
+tags: [Recommender Systems, Personalization, Housing]
 ---
 
 Choosing a place to live isn’t just a transaction — it’s one of the most important decisions people make, and the process is rarely straightforward. Price and square footage matter, but so do lifestyle, convenience, and the little details that make a space feel right. Traditional recommendation systems often miss this complexity because they lean too heavily on one type of signal.  

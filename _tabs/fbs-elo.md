@@ -5,7 +5,7 @@ icon: fas fa-football-ball
 order: 9
 permalink: /fbs-elo/
 categories: [sports]
-tags: [ELO, forecasting, football, FBS]
+tags: [Sports Analytics, College Football, Elo Ratings, Forecasting]
 ---
 
 <div id="fbs-elo" data-page="rankings" data-rankings="{{ '/assets/data/fbs-elo/current_elo_rankings.csv' | relative_url }}" data-weekly="{{ '/assets/data/fbs-elo/weekly_projections.csv' | relative_url }}">

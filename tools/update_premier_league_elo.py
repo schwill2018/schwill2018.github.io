@@ -56,7 +56,7 @@ def render(rankings, weekly, history, metadata):
         return {team: 1 + sum(other > elo for other in values.values()) for team, elo in values.items()}
     old_rank, new_rank = ranks(baseline), ranks(current)
     lines = ['---', 'layout: page', 'title: Premier League Elo', 'icon: fas fa-futbol', 'order: 11',
-             'permalink: /premier-league-elo/', 'categories: [sports]', 'tags: [ELO, forecasting, soccer]', '---', '',
+             'permalink: /premier-league-elo/', 'categories: [sports]', 'tags: [Sports Analytics, Premier League, Elo Ratings, Forecasting]', '---', '',
              f"Current Premier League Elo rankings as of **{clean(rankings[0].get('as_of_date'))}**.", '',
              f"Latest completed match in the source: **{clean(metadata['latest_result_date'])}**.", '',
              '| Rank | Team | Elo | Elo Δ | Rank Δ |', '| ---: | --- | ---: | ---: | ---: |']
