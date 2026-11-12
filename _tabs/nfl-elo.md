@@ -48,7 +48,7 @@ Elo Δ is the change from each team's latest completed game. Rank Δ is places g
 
 ## Weekly Predictions
 
-NFL Week 10: forecasts as of **2026-11-11**.
+NFL Week 10: forecasts as of **2026-11-12**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
