@@ -12,30 +12,30 @@ Current NFL Elo rankings as of **latest available update**.
 | Rank | Team | Elo | Elo Δ | Rank Δ | Conference | Division |
 | ---: | --- | ---: | ---: | ---: | --- | --- |
 | 1 | BUF | 1173.57 | +28.11 | +0 | AFC | AFC East |
-| 2 | JAX | 1129.79 | +22.43 | +5 | AFC | AFC South |
-| 3 | SF | 1123.31 | +13.08 | +2 | NFC | NFC West |
-| 4 | SEA | 1121.34 | +9.61 | -1 | NFC | NFC West |
-| 5 | DEN | 1121.33 | +10.15 | -1 | AFC | AFC West |
-| 6 | CHI | 1121.19 | +8.34 | -4 | NFC | NFC North |
-| 7 | LA | 1093.78 | +14.02 | +2 | NFC | NFC West |
-| 8 | MIN | 1080.04 | -28.11 | -2 | NFC | NFC North |
-| 9 | DET | 1080.03 | +12.77 | +1 | NFC | NFC North |
-| 10 | CIN | 1074.83 | +21.63 | +2 | AFC | AFC North |
-| 11 | GB | 1072.10 | +38.07 | +3 | NFC | NFC North |
-| 12 | PIT | 1064.90 | +21.14 | -1 | AFC | AFC North |
+| 2 | JAX | 1129.79 | +22.43 | +0 | AFC | AFC South |
+| 3 | SF | 1123.31 | +13.08 | +0 | NFC | NFC West |
+| 4 | SEA | 1121.34 | +9.61 | +0 | NFC | NFC West |
+| 5 | DEN | 1121.33 | +10.15 | +0 | AFC | AFC West |
+| 6 | CHI | 1121.19 | +8.34 | +0 | NFC | NFC North |
+| 7 | LA | 1093.78 | +14.02 | +0 | NFC | NFC West |
+| 8 | MIN | 1080.04 | -28.11 | +0 | NFC | NFC North |
+| 9 | DET | 1080.03 | +12.77 | +0 | NFC | NFC North |
+| 10 | CIN | 1074.83 | +21.63 | +0 | AFC | AFC North |
+| 11 | GB | 1072.10 | +38.07 | +0 | NFC | NFC North |
+| 12 | PIT | 1064.90 | +21.14 | +0 | AFC | AFC North |
 | 13 | KC | 1055.44 | +13.56 | +0 | AFC | AFC West |
-| 14 | NE | 1052.86 | -38.07 | -6 | AFC | AFC East |
+| 14 | NE | 1052.86 | -38.07 | +0 | AFC | AFC East |
 | 15 | HOU | 1035.34 | +21.97 | +0 | AFC | AFC South |
 | 16 | TB | 1001.53 | -8.34 | +0 | NFC | NFC South |
-| 17 | NYG | 982.80 | +20.59 | +2 | NFC | NFC East |
-| 18 | DAL | 972.16 | +14.93 | +2 | NFC | NFC East |
-| 19 | BAL | 961.91 | -22.43 | -2 | AFC | AFC North |
-| 20 | ATL | 952.09 | -21.63 | -2 | NFC | NFC South |
-| 21 | CLE | 946.48 | -3.48 | +0 | AFC | AFC North |
-| 22 | WAS | 931.59 | -14.02 | +0 | NFC | NFC East |
+| 17 | DAL | 972.16 | +14.93 | +1 | NFC | NFC East |
+| 18 | NYG | 965.15 | -17.65 | -1 | NFC | NFC East |
+| 19 | BAL | 961.91 | -22.43 | +0 | AFC | AFC North |
+| 20 | ATL | 952.09 | -21.63 | +0 | NFC | NFC South |
+| 21 | WAS | 949.24 | +17.65 | +1 | NFC | NFC East |
+| 22 | CLE | 946.48 | -3.48 | -1 | AFC | AFC North |
 | 23 | CAR | 926.53 | -10.15 | +0 | NFC | NFC South |
-| 24 | NO | 923.86 | +3.48 | +1 | NFC | NFC South |
-| 25 | LV | 917.85 | -13.08 | -1 | AFC | AFC West |
+| 24 | NO | 923.86 | +3.48 | +0 | NFC | NFC South |
+| 25 | LV | 917.85 | -13.08 | +0 | AFC | AFC West |
 | 26 | PHI | 893.47 | -20.59 | +0 | NFC | NFC East |
 | 27 | IND | 891.35 | -14.93 | +0 | AFC | AFC South |
 | 28 | ARI | 887.18 | -9.61 | +0 | NFC | NFC West |
@@ -44,7 +44,7 @@ Current NFL Elo rankings as of **latest available update**.
 | 31 | NYJ | 850.72 | -13.56 | +0 | AFC | AFC East |
 | 32 | TEN | 831.66 | +2.35 | +0 | AFC | AFC South |
 
-Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of Week 9 of 2026; 0 means unchanged.
+Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of Week 10 of 2026; 0 means unchanged.
 
 ## Weekly Predictions
 
@@ -52,7 +52,7 @@ NFL Week 10: forecasts as of **2026-11-12**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| 2026-11-12 | WAS | NYG | 931.59 | 982.80 | 38.7% | 61.3% | -3.5 | TBD |
+| 2026-11-12 | WAS | NYG | 931.59 | 982.80 | 38.7% | 61.3% | -3.5 | WAS |
 | 2026-11-15 | NE | DET | 1052.86 | 1080.03 | 46.1% | 53.9% | -1.0 | TBD |
 | 2026-11-15 | BUF | NYJ | 1173.57 | 850.72 | 84.4% | 15.6% | +12.5 | TBD |
 | 2026-11-15 | CAR | NO | 926.53 | 923.86 | 46.2% | 53.8% | -1.0 | TBD |
