@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+<div id="tags" class="d-flex flex-wrap mx-xl-2">
+  {% assign tags = '' | split: '' %}
+  {% for topic in site.data.topic_tags %}
+    {% assign tags = tags | push: topic[0] %}
+  {% endfor %}
+  {% assign sorted_tags = tags | sort_natural %}
+  {% for tag in sorted_tags %}
+    {% assign items = site.data.topic_tags[tag] %}
+    {% assign tag_url = tag | slugify | url_encode | prepend: '/tags/' | append: '/' %}
+    <div>
+      <a class="tag" href="{{ tag_url | relative_url }}">
+        {{ tag | escape }}
+        <span class="text-muted">{{ items.size }}</span>
+      </a>
+    </div>
+  {% endfor %}
+</div>
