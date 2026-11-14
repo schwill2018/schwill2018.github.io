@@ -8,7 +8,7 @@ categories: [sports]
 tags: [Sports Analytics, Premier League, Elo Ratings, Forecasting]
 ---
 
-Current Premier League Elo rankings as of **2026-11-13**.
+Current Premier League Elo rankings as of **2026-11-14**.
 
 Latest completed match in the source: **2026-11-08**.
 
