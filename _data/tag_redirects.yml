@@ -1,0 +1,21 @@
+# Preserve previously published tag URLs after standardizing the topic labels.
+ai: Recommender Systems
+aircraft: Aviation Analytics
+apis: NHL
+beighton: Hypermobility
+calibration: NHL
+clinical: Clinical Analytics
+dual-supervision: Recommender Systems
+feature-engineering: NHL
+hockey: NHL
+imputation: Multiple Imputation
+keras: NHL
+mice: Multiple Imputation
+pain: Psychosocial Outcomes
+prediction: NHL
+r-shiny: NHL
+random-forest: NHL
+shiny: Clinical Analytics
+statistics: NHL
+vector-auto-regression: Time Series
+xgboost: NHL
