@@ -8,14 +8,14 @@ categories: [sports]
 tags: [Sports Analytics, Premier League, Elo Ratings, Forecasting]
 ---
 
-Current Premier League Elo rankings as of **2026-11-20**.
+Current Premier League Elo rankings as of **2026-11-21**.
 
-Latest completed match in the source: **2026-11-08**.
+Latest completed match in the source: **2026-11-21**.
 
 | Rank | Team | Elo | Elo Δ | Rank Δ |
 | ---: | --- | ---: | ---: | ---: |
 | 1 | Arsenal | 1341.51 | +1.59 | +0 |
-| 2 | Man City | 1279.10 | -33.18 | +0 |
+| 2 | Man City | 1270.24 | -8.86 | +0 |
 | 3 | Brighton | 1235.87 | +11.33 | +0 |
 | 4 | Liverpool | 1202.78 | +12.49 | +0 |
 | 5 | Bournemouth | 1188.43 | +6.22 | +0 |
@@ -26,8 +26,8 @@ Latest completed match in the source: **2026-11-08**.
 | 10 | Leeds | 1109.37 | +8.49 | +0 |
 | 11 | Everton | 1098.25 | +10.70 | +0 |
 | 12 | Nott&#x27;m Forest | 1096.63 | +33.18 | +0 |
-| 13 | Newcastle | 1072.03 | +2.65 | +0 |
-| 14 | Fulham | 1070.89 | -2.65 | +0 |
+| 13 | Fulham | 1079.75 | +8.86 | +1 |
+| 14 | Newcastle | 1072.03 | +2.65 | -1 |
 | 15 | Tottenham | 1054.77 | -8.49 | +0 |
 | 16 | Sunderland | 1021.06 | +15.12 | +0 |
 | 17 | Crystal Palace | 992.88 | -12.49 | +0 |
@@ -43,7 +43,7 @@ Matchday **11 of 38**. Kickoff times are UK local time.
 
 | Date | Time | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Forecast Date | Outcome |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 2026-11-21 | 12:30 | Fulham | Man City | 1070.89 | 1279.10 | 17.2% | 82.8% | -1.0 | 2026-11-09 | TBD |
+| 2026-11-21 | 12:30 | Fulham | Man City | 1070.89 | 1279.10 | 17.2% | 82.8% | -1.0 | 2026-11-09 | Draw (1–1 home–away) |
 | 2026-11-21 | 15:00 | Sunderland | Aston Villa | 1021.06 | 1144.14 | 25.3% | 74.7% | -1.0 | 2026-11-09 | TBD |
 | 2026-11-21 | 15:00 | Nott&#x27;m Forest | Bournemouth | 1096.63 | 1188.43 | 28.9% | 71.1% | -0.5 | 2026-11-09 | TBD |
 | 2026-11-21 | 15:00 | Leeds | Chelsea | 1109.37 | 1112.00 | 40.4% | 59.6% | -0.5 | 2026-11-09 | TBD |
