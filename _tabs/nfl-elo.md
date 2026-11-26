@@ -12,39 +12,39 @@ Current NFL Elo rankings as of **latest available update**.
 | Rank | Team | Elo | Elo Δ | Rank Δ | Conference | Division |
 | ---: | --- | ---: | ---: | ---: | --- | --- |
 | 1 | BUF | 1187.55 | +5.75 | +0 | AFC | AFC East |
-| 2 | SF | 1165.65 | +30.13 | +1 | NFC | NFC West |
-| 3 | SEA | 1132.25 | +10.92 | +1 | NFC | NFC West |
-| 4 | DEN | 1130.97 | +9.64 | +1 | AFC | AFC West |
-| 5 | CHI | 1129.09 | +7.90 | +1 | NFC | NFC North |
-| 6 | DET | 1123.80 | +14.10 | +3 | NFC | NFC North |
-| 7 | JAX | 1112.08 | -26.74 | -5 | AFC | AFC South |
-| 8 | LA | 1110.27 | +16.49 | +0 | NFC | NFC West |
-| 9 | KC | 1091.58 | +12.21 | +2 | AFC | AFC West |
+| 2 | SF | 1165.65 | +30.13 | +0 | NFC | NFC West |
+| 3 | SEA | 1132.25 | +10.92 | +0 | NFC | NFC West |
+| 4 | DEN | 1130.97 | +9.64 | +0 | AFC | AFC West |
+| 5 | CHI | 1129.09 | +7.90 | +0 | NFC | NFC North |
+| 6 | LA | 1128.46 | +18.19 | +2 | NFC | NFC West |
+| 7 | DET | 1123.80 | +14.10 | -1 | NFC | NFC North |
+| 8 | JAX | 1112.08 | -26.74 | -1 | AFC | AFC South |
+| 9 | KC | 1091.58 | +12.21 | +0 | AFC | AFC West |
 | 10 | CIN | 1085.81 | -15.60 | +0 | AFC | AFC North |
-| 11 | MIN | 1082.51 | -30.13 | -4 | NFC | NFC North |
-| 12 | GB | 1039.50 | -32.61 | +0 | NFC | NFC North |
-| 13 | HOU | 1036.53 | +17.87 | +2 | AFC | AFC South |
-| 14 | NE | 1023.19 | -29.68 | +0 | AFC | AFC East |
-| 15 | PIT | 1018.97 | -19.34 | -2 | AFC | AFC North |
-| 16 | NYG | 991.88 | +26.74 | +1 | NFC | NFC East |
-| 17 | TB | 987.43 | -14.10 | -1 | NFC | NFC South |
-| 18 | DAL | 975.90 | +15.95 | +1 | NFC | NFC East |
-| 19 | WAS | 964.84 | +15.60 | +1 | NFC | NFC East |
-| 20 | CLE | 963.16 | +16.68 | -2 | AFC | AFC North |
-| 21 | CAR | 951.58 | +9.96 | +1 | NFC | NFC South |
-| 22 | BAL | 932.21 | -9.96 | -1 | AFC | AFC North |
+| 11 | MIN | 1082.51 | -30.13 | +0 | NFC | NFC North |
+| 12 | HOU | 1036.53 | +17.87 | +1 | AFC | AFC South |
+| 13 | NE | 1023.19 | -29.68 | +1 | AFC | AFC East |
+| 14 | GB | 1021.31 | -18.19 | -2 | NFC | NFC North |
+| 15 | PIT | 1018.97 | -19.34 | +0 | AFC | AFC North |
+| 16 | NYG | 991.88 | +26.74 | +0 | NFC | NFC East |
+| 17 | TB | 987.43 | -14.10 | +0 | NFC | NFC South |
+| 18 | DAL | 975.90 | +15.95 | +0 | NFC | NFC East |
+| 19 | WAS | 964.84 | +15.60 | +0 | NFC | NFC East |
+| 20 | CLE | 963.16 | +16.68 | +0 | AFC | AFC North |
+| 21 | CAR | 951.58 | +9.96 | +0 | NFC | NFC South |
+| 22 | BAL | 932.21 | -9.96 | +0 | AFC | AFC North |
 | 23 | ATL | 928.15 | -23.94 | +0 | NFC | NFC South |
-| 24 | PHI | 912.81 | +19.34 | +3 | NFC | NFC East |
-| 25 | NO | 900.87 | -7.90 | -1 | NFC | NFC South |
-| 26 | LV | 897.30 | -9.64 | -1 | AFC | AFC West |
-| 27 | IND | 882.54 | -17.87 | -1 | AFC | AFC South |
+| 24 | PHI | 912.81 | +19.34 | +0 | NFC | NFC East |
+| 25 | NO | 900.87 | -7.90 | +0 | NFC | NFC South |
+| 26 | LV | 897.30 | -9.64 | +0 | AFC | AFC West |
+| 27 | IND | 882.54 | -17.87 | +0 | AFC | AFC South |
 | 28 | LAC | 869.07 | -17.30 | +0 | AFC | AFC West |
-| 29 | NYJ | 859.80 | +17.30 | +2 | AFC | AFC East |
-| 30 | ARI | 858.49 | -12.21 | -1 | NFC | NFC West |
-| 31 | MIA | 851.29 | -5.75 | -1 | AFC | AFC East |
+| 29 | NYJ | 859.80 | +17.30 | +0 | AFC | AFC East |
+| 30 | ARI | 858.49 | -12.21 | +0 | NFC | NFC West |
+| 31 | MIA | 851.29 | -5.75 | +0 | AFC | AFC East |
 | 32 | TEN | 806.69 | -15.95 | +0 | AFC | AFC South |
 
-Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of Week 11 of 2026; 0 means unchanged.
+Elo Δ is the change from each team's latest completed game. Rank Δ is places gained (+) or lost (−) since the start of Week 12 of 2026; 0 means unchanged.
 
 ## Weekly Predictions
 
@@ -52,7 +52,7 @@ NFL Week 12: forecasts as of **2026-11-25**.
 
 | Date | Away | Home | Away Elo | Home Elo | Away Win Probability | Home Win Probability | Home Spread | Outcome |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| 2026-11-25 | GB | LA | 1039.50 | 1110.27 | 36.0% | 64.0% | -4.5 | TBD |
+| 2026-11-25 | GB | LA | 1039.50 | 1110.27 | 36.0% | 64.0% | -4.5 | LA |
 | 2026-11-26 | CHI | DET | 1129.09 | 1123.80 | 46.6% | 53.4% | -1.0 | TBD |
 | 2026-11-26 | PHI | DAL | 912.81 | 975.90 | 37.0% | 63.0% | -4.0 | TBD |
 | 2026-11-26 | KC | BUF | 1091.58 | 1187.55 | 32.8% | 67.2% | -5.5 | TBD |
